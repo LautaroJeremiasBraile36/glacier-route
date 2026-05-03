@@ -1,0 +1,189 @@
+/* ════════════════════════════════════════
+   GALLERY GRID
+════════════════════════════════════════ */
+
+.gallery .container {
+  padding-bottom: var(--space-md);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+/* Bento desktop: cada 5° item ocupa 2 columnas — patrón limpio para 11 imágenes */
+@media (min-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__item:nth-child(5n + 1) {
+    grid-column: span 2;
+  }
+}
+
+/* ── Item ── */
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 220px;
+  background-color: var(--color-stone);
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .gallery__item { height: 280px; }
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.gallery__item:hover img,
+.gallery__item:focus-visible img {
+  transform: scale(1.06);
+}
+
+/* ── Hover overlay ── */
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background-color var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay,
+.gallery__item:focus-visible .gallery__overlay {
+  background-color: rgba(0, 0, 0, 0.40);
+}
+
+.gallery__overlay svg {
+  opacity: 0;
+  transform: scale(0.75);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay svg,
+.gallery__item:focus-visible .gallery__overlay svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ════════════════════════════════════════
+   LIGHTBOX
+════════════════════════════════════════ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-lightbox);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.93);
+}
+
+.lightbox__figure {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Controles ── */
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+  position: fixed;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.10);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.lightbox__close {
+  top: 16px;
+  right: 16px;
+}
+
+.lightbox__prev {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__next {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__prev:disabled,
+.lightbox__next:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .lightbox__prev { left: 24px; }
+  .lightbox__next { right: 24px; }
+}
+
+@media (min-width: 1200px) {
+  .gallery__item { height: 320px; }
+}

@@ -1,0 +1,390 @@
+/* ════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* WhatsApp */
+.btn--whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #fff;
+  border-color: var(--color-whatsapp);
+}
+
+.btn--whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+  border-color: var(--color-whatsapp-hover);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+/* Outline blanco — sobre fondos oscuros */
+.btn--outline-white {
+  background-color: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.btn--outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+/* Primary — azul glaciar */
+.btn--primary {
+  background-color: var(--color-cta);
+  color: #fff;
+  border-color: var(--color-cta);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+  box-shadow: 0 6px 16px rgba(42, 107, 138, 0.35);
+}
+
+/* Secondary — outline glaciar */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-cta);
+  border-color: var(--color-cta);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-cta);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(42, 107, 138, 0.25);
+}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  padding-block: var(--space-sm);
+}
+
+/* Logo */
+.nav__logo img {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.nav__logo:hover img {
+  opacity: 0.85;
+}
+
+/* Links — ocultos en mobile */
+.nav__links {
+  display: none;
+  list-style: none;
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-glacier);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  width: 100%;
+}
+
+.nav__link--active {
+  color: var(--color-sky);
+}
+
+/* Hamburger */
+.nav__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-xs);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav__hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav__hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-on-dark);
+  border-radius: 1px;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    background-color var(--transition-base);
+}
+
+/* ── Estado: scrolled (glassmorphism) ── */
+.site-header--scrolled {
+  background-color: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07), 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.site-header--scrolled .nav__link {
+  color: var(--color-text);
+}
+
+.site-header--scrolled .nav__link--active {
+  color: var(--color-glacier);
+}
+
+.site-header--scrolled .nav__hamburger-line {
+  background-color: var(--color-text);
+}
+
+.site-header--scrolled .nav__hamburger:hover {
+  background-color: var(--color-sky);
+}
+
+/* ── Estado: menú mobile abierto (glassmorphism) ── */
+.site-header--open {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.site-header--open .nav__hamburger-line {
+  background-color: var(--color-text);
+}
+
+.site-header--open .nav__hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header--open .nav__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.site-header--open .nav__hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-header--open .nav__links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-xs) var(--container-padding) var(--space-md);
+  box-shadow: var(--shadow-md);
+  gap: 0;
+}
+
+.site-header--open .nav__link {
+  display: block;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  padding-block: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header--open .nav__link:last-child {
+  border-bottom: none;
+}
+
+.site-header--open .nav__link--active {
+  color: var(--color-glacier);
+}
+
+/* ── Desktop ── */
+@media (min-width: 768px) {
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .nav__link--cta {
+    padding: 8px 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-md);
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  .nav__link--cta::after {
+    display: none;
+  }
+
+  .nav__link--cta:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: white;
+  }
+
+  .site-header--scrolled .nav__link--cta {
+    border-color: var(--color-glacier);
+    color: var(--color-glacier);
+  }
+
+  .site-header--scrolled .nav__link--cta:hover {
+    background-color: var(--color-sky);
+    border-color: var(--color-cta-hover);
+  }
+}
+
+/* ════════════════════════════════════════
+   FLOATING ACTION BUTTONS (FABs)
+════════════════════════════════════════ */
+
+.floating-buttons {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: var(--z-fab);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fabEntrance 0.45s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fabEntrance {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--shadow-fab);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.fab--whatsapp {
+  background-color: var(--color-whatsapp);
+}
+
+.fab--whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+}
+
+.fab--instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+/* En mobile, solo mostrar WhatsApp */
+@media (max-width: 767px) {
+  .fab--instagram { display: none; }
+}

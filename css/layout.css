@@ -1,0 +1,214 @@
+/* ── Contenedor global ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ── Secciones ── */
+.section {
+  padding-block: var(--section-padding);
+}
+
+.nosotros          { background-color: var(--color-cream); }
+.gallery           { background-color: var(--color-stone); }
+.contact-cta       { background-color: var(--color-glacier); }
+
+/* ── Calafate: sección con imagen de fondo ── */
+.services-calafate {
+  position: relative;
+  isolation: isolate;
+  background-image: url("../assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.51 (2).jpeg");
+  background-size: cover;
+  background-position: center 35%;
+}
+
+.services-calafate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(8, 14, 20, 0.78) 0%,
+    rgba(8, 14, 20, 0.65) 100%
+  );
+  z-index: -1;
+}
+
+.services-calafate .section-title {
+  color: var(--color-text-on-dark);
+}
+
+.services-calafate .service-block__title {
+  color: var(--color-text-on-dark);
+}
+
+.services-calafate .service-block__desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Chaltén: sección con imagen de fondo ── */
+.services-chalten {
+  position: relative;
+  isolation: isolate;
+  background-image: url("../assets/chalten/WhatsApp Image 2026-05-02 at 14.58.49.jpeg");
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.services-chalten::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10, 16, 22, 0.72) 0%,
+    rgba(10, 16, 22, 0.60) 100%
+  );
+  z-index: -1;
+}
+
+.services-chalten .section-title {
+  color: var(--color-text-on-dark);
+}
+
+.services-chalten .eyebrow {
+  color: var(--color-sky);
+}
+
+/* ── Tipografía compartida ── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-glacier);
+  margin-bottom: var(--space-xs);
+}
+
+.eyebrow--centered {
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.section-title--light {
+  color: var(--color-text-on-dark);
+}
+
+/* ── Nosotros ── */
+.nosotros__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.nosotros__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.nosotros__text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Trust badges ── */
+.trust-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.trust-badge__icon {
+  color: var(--color-glacier);
+  flex-shrink: 0;
+}
+
+.trust-badge__text {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .nosotros__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .trust-badges {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nosotros__grid {
+    align-items: start;
+    gap: calc(var(--space-xl) + var(--space-md));
+  }
+
+  .trust-badge {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: var(--text-5xl);
+  }
+}
+
+/* ════════════════════════════════════════
+   ANIMACIONES DE SECCIÓN (Fase 10)
+   JS agrega .animate al cargar, luego
+   .is-visible cuando entra en viewport.
+════════════════════════════════════════ */
+
+.animate {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
