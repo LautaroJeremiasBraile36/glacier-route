@@ -8,12 +8,107 @@
   <meta name="theme-color" content="#001e38" />
   <link rel="icon" href="assets/icon/logo-glacier-route.ico" />
   <link rel="shortcut icon" href="assets/icon/logo-glacier-route.ico" />
+  <link rel="canonical" href="https://glacier-route.vercel.app/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Glacier Route | Traslados El Calafate y El Chaltén" />
   <meta property="og:description" content="Tu anfitrión en la Patagonia. Traslados y excursiones con especialistas locales." />
-  <meta property="og:image" content="assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.50.jpeg" />
+  <meta property="og:image" content="https://glacier-route.vercel.app/assets/glaciar/glaciar-hero.jpeg" />
+  <meta property="og:image:width" content="1170" />
+  <meta property="og:image:height" content="470" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://glacier-route.vercel.app/" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Glacier Route" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glacier Route | Traslados El Calafate y El Chaltén" />
+  <meta name="twitter:description" content="Tu anfitrión en la Patagonia. Traslados y excursiones con especialistas locales." />
+  <meta name="twitter:image" content="https://glacier-route.vercel.app/assets/glaciar/glaciar-hero.jpeg" />
+
+  <!-- Geo -->
+  <meta name="geo.region" content="AR-Z" />
+  <meta name="geo.placename" content="El Calafate, Santa Cruz, Argentina" />
+  <meta name="geo.position" content="-50.3400;-72.2647" />
+  <meta name="ICBM" content="-50.3400, -72.2647" />
+
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://glacier-route.vercel.app/",
+    "name": "Glacier Route",
+    "description": "Traslados y excursiones en El Calafate y El Chaltén. Aeropuerto, City Tour, Glaciar Perito Moreno y Chaltén Full Day.",
+    "url": "https://glacier-route.vercel.app/",
+    "telephone": "+5491162806101",
+    "image": "https://glacier-route.vercel.app/assets/glaciar/glaciar-hero.jpeg",
+    "priceRange": "$$",
+    "sameAs": ["https://www.instagram.com/traslados.elcalafate"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "El Calafate",
+      "addressRegion": "Santa Cruz",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -50.3400,
+      "longitude": -72.2647
+    },
+    "areaServed": [
+      { "@type": "City", "name": "El Calafate" },
+      { "@type": "City", "name": "El Chaltén" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de traslado y turismo en la Patagonia",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traslado Aeropuerto El Calafate",
+            "description": "Traslado desde/hacia el Aeropuerto Malvinas Argentinas de El Calafate con recepción personalizada."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "City Tour El Calafate",
+            "description": "Recorrido por los puntos panorámicos e históricos de El Calafate en turno mañana o tarde."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traslado Glaciar Perito Moreno",
+            "description": "Traslado al Glaciar Perito Moreno en el Parque Nacional Los Glaciares. Opciones: solo ida, puertos o ida y vuelta con pasarelas."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traslado El Chaltén",
+            "description": "Traslado desde El Calafate a El Chaltén, Capital Nacional del Trekking."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Chaltén Full Day",
+            "description": "Experiencia de día completo en El Chaltén con los hitos principales de la Capital Nacional del Trekking."
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +158,7 @@
     <section id="inicio" class="hero" aria-label="Presentación principal">
       <div class="hero__media" aria-hidden="true">
         <video class="hero__video" autoplay muted loop playsinline>
-          <source src="assets/video hero/videoHero.mp4" type="video/mp4" />
+          <source src="assets/video/videoHero.mp4" type="video/mp4" />
         </video>
         <div class="hero__image-fallback"></div>
       </div>
@@ -148,14 +243,14 @@
           <p class="service-block__desc">Terminá tu viaje sin estrés. Te buscamos puntualmente en tu hotel o te recibimos en el aeropuerto con cartel identificatorio. El primer y último contacto de tu estadía, en manos confiables.</p>
 
           <div class="service-block__banner">
-            <img src="assets/aeropuerto el calafe/aeropuerto1.jpg" alt="Aeropuerto Internacional Malvinas Argentinas, El Calafate" />
+            <img src="assets/aeropuerto/aeropuerto1.jpg" alt="Aeropuerto Internacional Malvinas Argentinas, El Calafate" width="1170" height="470" />
             <span class="service-block__banner-label">Aeropuerto El Calafate</span>
           </div>
 
           <div class="cards-row">
             <div class="card card--transfer card--visual">
               <div class="card__image-wrap">
-                <img class="card__image" src="assets/aeropuerto el calafe/avion-aeropuerto-calafate.png" alt="Avión en el aeropuerto de El Calafate" loading="lazy" />
+                <img class="card__image" src="assets/aeropuerto/avion-aeropuerto-calafate.png" alt="Avión en el aeropuerto de El Calafate" width="1280" height="853" loading="lazy" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Aeropuerto → Ciudad</h4>
@@ -169,7 +264,7 @@
             <div class="card card--transfer card--visual">
               <div class="card__image-wrap">
                 <video autoplay muted loop playsinline aria-hidden="true">
-                  <source src="assets/aeropuerto el calafe/plano-volando-desde-avion-calafate.mp4" type="video/mp4" />
+                  <source src="assets/aeropuerto/plano-volando-desde-avion-calafate.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="card__body">
@@ -260,49 +355,49 @@
 
         <!-- El Chaltén — 8 imágenes (la 1° fue al fondo de la sección Chaltén) -->
         <button class="gallery__item" data-index="0" aria-label="Ver imagen de El Chaltén 1">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.49 (1).jpeg" alt="Trekking en El Chaltén, Patagonia" loading="lazy" />
+          <img src="assets/chalten/chalten-01.jpeg" alt="Trekking en El Chaltén, Patagonia" width="720" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="1" aria-label="Ver imagen de El Chaltén 2">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.50.jpeg" alt="Montañas de El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-02.jpeg" alt="Montañas de El Chaltén" width="720" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="2" aria-label="Ver imagen de El Chaltén 3">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.50 (1).jpeg" alt="Senderos de montaña en El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-03.jpeg" alt="Senderos de montaña en El Chaltén" width="1280" height="960" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="3" aria-label="Ver imagen de El Chaltén 4">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.51.jpeg" alt="Naturaleza patagónica en El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-04.jpeg" alt="Naturaleza patagónica en El Chaltén" width="960" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="4" aria-label="Ver imagen de El Chaltén 5">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.51 (1).jpeg" alt="Vista panorámica en El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-05.jpeg" alt="Vista panorámica en El Chaltén" width="960" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="5" aria-label="Ver imagen de El Chaltén 6">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.51 (2).jpeg" alt="Excursión en El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-06.jpeg" alt="Excursión en El Chaltén" width="960" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="6" aria-label="Ver imagen de El Chaltén 7">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.52.jpeg" alt="Laguna y montaña en El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-07.jpeg" alt="Laguna y montaña en El Chaltén" width="720" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="7" aria-label="Ver imagen de El Chaltén 8">
-          <img src="assets/chalten/WhatsApp Image 2026-05-02 at 14.58.52 (1).jpeg" alt="Paisaje patagónico de El Chaltén" loading="lazy" />
+          <img src="assets/chalten/chalten-08.jpeg" alt="Paisaje patagónico de El Chaltén" width="720" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
@@ -310,19 +405,19 @@
 
         <!-- Glaciar Perito Moreno — 3 imágenes (la 1° fue al fondo de la sección Calafate) -->
         <button class="gallery__item" data-index="8" aria-label="Ver imagen del Glaciar Perito Moreno 1">
-          <img src="assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.52.jpeg" alt="Naturaleza del Parque Nacional Los Glaciares" loading="lazy" />
+          <img src="assets/glaciar/glaciar-01.jpeg" alt="Naturaleza del Parque Nacional Los Glaciares" width="828" height="473" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="9" aria-label="Ver imagen del Glaciar Perito Moreno 2">
-          <img src="assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.52 (1).jpeg" alt="Glaciar Perito Moreno, Patagonia argentina" loading="lazy" />
+          <img src="assets/glaciar/glaciar-02.jpeg" alt="Glaciar Perito Moreno, Patagonia argentina" width="828" height="500" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
         <button class="gallery__item" data-index="10" aria-label="Ver imagen del Glaciar Perito Moreno 3">
-          <img src="assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.52 (2).jpeg" alt="Maravilla natural del Glaciar Perito Moreno" loading="lazy" />
+          <img src="assets/glaciar/glaciar-03.jpeg" alt="Maravilla natural del Glaciar Perito Moreno" width="828" height="609" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>

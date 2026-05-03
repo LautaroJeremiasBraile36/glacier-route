@@ -19,7 +19,7 @@
 .services-calafate {
   position: relative;
   isolation: isolate;
-  background-image: url("../assets/glaciar perito moreno/WhatsApp Image 2026-05-02 at 14.56.51 (2).jpeg");
+  background-image: url("../assets/glaciar/glaciar-calafate-bg.jpeg");
   background-size: cover;
   background-position: center 35%;
 }
@@ -52,7 +52,7 @@
 .services-chalten {
   position: relative;
   isolation: isolate;
-  background-image: url("../assets/chalten/WhatsApp Image 2026-05-02 at 14.58.49.jpeg");
+  background-image: url("../assets/chalten/chalten-bg.jpeg");
   background-size: cover;
   background-position: center 40%;
 }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glacier-route.vercel.app/sitemap.xml
