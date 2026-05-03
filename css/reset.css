@@ -1,3 +1,21 @@
+/* Candide — brandboard font (Camelot Typefaces) */
+@font-face {
+  font-family: "Candide";
+  src: url("../assets/fonts/Candide-Regular.woff2") format("woff2"),
+       url("../assets/fonts/Candide-Regular.woff")  format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Candide";
+  src: url("../assets/fonts/Candide-Bold.woff2") format("woff2"),
+       url("../assets/fonts/Candide-Bold.woff")  format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {

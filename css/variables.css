@@ -1,9 +1,9 @@
 :root {
   /* ── Colores primarios ── */
   --color-stone: #1c1c1a;
-  --color-glacier: #2a6b8a;
+  --color-glacier: #001e38;   /* navy — brandboard primary */
   --color-sky: #e8f4f8;
-  --color-terra: #8b5e3c;
+  --color-terra: #c57b30;     /* amber copper — brandboard accent */
   --color-cream: #f5f0e8;
 
   /* ── Colores funcionales ── */
@@ -15,13 +15,14 @@
   --color-border: rgba(28, 28, 26, 0.12);
 
   /* ── CTAs ── */
-  --color-cta: #2a6b8a;
-  --color-cta-hover: #1e5272;
+  --color-cta: #001e38;
+  --color-cta-hover: #00315f;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1da851;
 
   /* ── Tipografía ── */
-  --font-display: "Playfair Display", Georgia, serif;
+  /* Brandboard: Candide (Camelot Typefaces) — agregar archivos .woff2 en /assets/fonts/ y descomentar @font-face en reset.css */
+  --font-display: "Candide", "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-xs: 0.75rem;
