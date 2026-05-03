@@ -206,14 +206,17 @@
   flex-shrink: 0;
 }
 
-.card__image {
+.card__image,
+.card__image-wrap video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-slow);
 }
 
-.card--visual:hover .card__image {
+.card--visual:hover .card__image,
+.card--visual:hover .card__image-wrap video {
   transform: scale(1.05);
 }
 
@@ -245,10 +248,12 @@
   margin-bottom: var(--space-md);
 }
 
-.service-block__banner img {
+.service-block__banner img,
+.service-block__banner video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .service-block__banner-label {
