@@ -116,13 +116,20 @@
 
 /* Logo */
 .nav__logo img {
-  height: 44px;
-  width: 44px;
+  height: 52px;
+  width: 52px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
   display: block;
   transition: opacity var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .nav__logo img {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .nav__logo:hover img {
