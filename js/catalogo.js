@@ -1,28 +1,40 @@
-import { servicios } from './data/servicios.js';
-import { buildWhatsAppLink } from './whatsapp.js';
+import { servicios, PRECIO_VIANDA } from './data/servicios.js';
+import { getWhatsAppLink } from './whatsapp.js';
+import { esc, precio } from './formato.js';
 
-const formatoPrecio = new Intl.NumberFormat('es-AR', {
-  style: 'currency',
-  currency: 'ARS',
-  maximumFractionDigits: 0,
-});
+const pasajeros = n => `${n} ${n === 1 ? 'pasajero' : 'pasajeros'}`;
 
-const esc = str => String(str).replace(/[&<>"']/g, c => (
-  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
-));
+function preciosHTML(s) {
+  return `
+    <div class="precios">
+      <p class="precios__titulo">Precio total del traslado</p>
+      <dl class="precios__lista">
+        ${[1, 2, 3, 4].map(n => `
+          <div class="precios__item">
+            <dt>${pasajeros(n)}</dt>
+            <dd>${esc(precio(s.precios[n]))}</dd>
+          </div>`).join('')}
+      </dl>
+      ${s.vianda ? `<p class="precios__vianda">Vianda opcional: ${esc(precio(PRECIO_VIANDA))} por persona</p>` : ''}
+    </div>
+    <p class="card__grupos">
+      ¿5 o más?
+      <a href="${getWhatsAppLink('grupos')}" target="_blank" rel="noopener noreferrer">Consultanos</a>
+      o <a href="sos-tc.html">armá el itinerario del grupo</a>.
+    </p>`;
+}
 
 /* ── Card de servicio ──
-   La reserva va directo a WhatsApp; la spec 03 la reemplaza por el formulario. */
-function cardHTML(s, { badge = true, maxDetalles = Infinity } = {}) {
-  const desde = s.precios[1];
-  const detalles = s.detalles.slice(0, maxDetalles);
-  const reservar = buildWhatsAppLink(`Hola! Quiero reservar: ${s.titulo}.`);
+   compacta: solo "Desde" (inicio). completa: tabla de precios por pasajeros (servicios). */
+function cardHTML(s, { compacta = false } = {}) {
+  const destacada = s.destacado && !compacta;
+  const detalles = compacta ? s.detalles.slice(0, 3) : s.detalles;
 
   return `
-    <article class="card card--visual card--servicio${s.destacado && badge ? ' card--featured' : ''}" id="servicio-${esc(s.id)}">
+    <article class="card card--visual card--servicio${destacada ? ' card--featured' : ''}" id="servicio-${esc(s.id)}">
       <div class="card__image-wrap">
         <img class="card__image" src="${esc(s.imagen)}" alt="${esc(s.alt)}" loading="lazy" />
-        ${s.destacado && badge ? '<span class="card__badge">Más recomendado</span>' : ''}
+        ${destacada ? '<span class="card__badge">Más recomendado</span>' : ''}
       </div>
       <div class="card__body">
         ${s.recorrido ? `<p class="card__meta">${esc(s.recorrido)}</p>` : ''}
@@ -31,12 +43,11 @@ function cardHTML(s, { badge = true, maxDetalles = Infinity } = {}) {
           ${detalles.map(d => `<li>${esc(d)}</li>`).join('')}
         </ul>
         ${s.nota ? `<p class="card__note">${esc(s.nota)}</p>` : ''}
-        <p class="card__price">
-          <span class="card__price-label">Desde</span>
-          ${desde == null ? 'Consultar' : esc(formatoPrecio.format(desde))}
-        </p>
-        <a href="${reservar}" class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-           aria-label="Reservar ahora: ${esc(s.titulo)}">Reservar ahora</a>
+        ${compacta
+          ? `<p class="card__price"><span class="card__price-label">Desde</span> ${esc(precio(s.precios[1]))}</p>`
+          : preciosHTML(s)}
+        <button type="button" class="btn btn--primary" data-reservar="${esc(s.id)}"
+                aria-label="Reservar ahora: ${esc(s.titulo)}" aria-haspopup="dialog">Reservar ahora</button>
       </div>
     </article>`;
 }
@@ -47,7 +58,7 @@ function initDestacados() {
   if (!grid) return;
   grid.innerHTML = servicios
     .filter(s => s.destacado)
-    .map(s => cardHTML(s, { badge: false, maxDetalles: 3 }))
+    .map(s => cardHTML(s, { compacta: true }))
     .join('');
 }
 

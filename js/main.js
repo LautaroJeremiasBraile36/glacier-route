@@ -2,6 +2,7 @@ import { initNav }                       from './nav.js';
 import { initWhatsApp, getWhatsAppLink } from './whatsapp.js';
 import { initGallery }                   from './gallery.js';
 import { initCatalogo }                  from './catalogo.js';
+import { initReserva }                   from './reserva.js';
 import { INSTAGRAM_URL }                 from './config.js';
 
 // Cada inicializador sale sin hacer nada si su elemento no está en la página
@@ -9,6 +10,7 @@ initNav();
 initWhatsApp();
 initInstagramLinks();
 initCatalogo();
+initReserva();
 initGallery();
 initScrollIndicator();
 initSectionAnimations();
