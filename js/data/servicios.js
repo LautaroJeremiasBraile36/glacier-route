@@ -3,8 +3,7 @@
 
 export const PRECIO_VIANDA = 27500; // ARS por persona
 
-// TODO: pasar a .webp cuando estén convertidas (mismo nombre de archivo)
-const img = id => `assets/servicios/${id}.jpeg`;
+const img = id => `assets/servicios/${id}.webp`;
 
 export const servicios = [
   // ── El Calafate ──
@@ -163,7 +162,7 @@ export const servicios = [
     destino: 'chalten',
     titulo: 'El Chaltén Full Day',
     recorrido: '215 km · 3 h',
-    imagen: img('chalten-full-day'),
+    imagen: 'assets/servicios/chalten-full-day.jpeg', // TODO cliente: falta la versión WebP
     alt: 'Viajero fotografiando el cerro Fitz Roy y una cascada en El Chaltén',
     detalles: [
       'Traslado de ida puntual',
