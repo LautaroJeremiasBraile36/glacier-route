@@ -1,13 +1,22 @@
 import { initNav }                       from './nav.js';
 import { initWhatsApp, getWhatsAppLink } from './whatsapp.js';
 import { initGallery }                   from './gallery.js';
+import { INSTAGRAM_URL }                 from './config.js';
 
 initNav();
 initWhatsApp();
+initInstagramLinks();
 initGallery();
 initScrollIndicator();
 initSectionAnimations();
 initFabScrollSpy();
+
+/* ── Links de Instagram desde js/config.js ── */
+function initInstagramLinks() {
+  document.querySelectorAll('.js-instagram').forEach(el => {
+    el.href = INSTAGRAM_URL;
+  });
+}
 
 /* ── Oculta la flecha del hero al llegar a #nosotros ── */
 function initScrollIndicator() {

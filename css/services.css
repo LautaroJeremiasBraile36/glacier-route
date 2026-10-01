@@ -131,50 +131,6 @@
 }
 
 /* ════════════════════════════════════════
-   PILLS (City Tour)
-════════════════════════════════════════ */
-
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
-}
-
-.pill {
-  padding: 10px 22px;
-  border-radius: var(--radius-full);
-  border: 1.5px solid var(--color-border);
-  background-color: transparent;
-  color: var(--color-text-muted);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  cursor: pointer;
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast);
-}
-
-.pill:hover {
-  border-color: var(--color-glacier);
-  color: var(--color-glacier);
-}
-
-.pill--active {
-  background-color: var(--color-glacier);
-  border-color: var(--color-glacier);
-  color: #fff;
-}
-
-.pill--active:hover {
-  background-color: var(--color-cta-hover);
-  border-color: var(--color-cta-hover);
-  color: #fff;
-}
-
-/* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
 
@@ -285,64 +241,8 @@
 }
 
 /* ════════════════════════════════════════
-   ITINERARIO CITY TOUR
-════════════════════════════════════════ */
-
-.city-tour-itinerary {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-}
-
-.city-tour-itinerary__heading {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-terra);
-  margin-bottom: var(--space-xs);
-}
-
-.city-tour-itinerary__lead {
-  font-size: var(--text-base);
-  color: rgba(255, 255, 255, 0.80);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-md);
-}
-
-.city-tour-itinerary__list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.city-tour-itinerary__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.80);
-  line-height: var(--leading-snug);
-}
-
-.city-tour-itinerary__list li::before {
-  content: '•';
-  color: var(--color-terra);
-  font-size: 1.1em;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* ════════════════════════════════════════
    GLASSMORPHISM — CONTEXTO CALAFATE
-   (aplica a todas las cards, pills y
+   (aplica a todas las cards y
    service-blocks dentro de #calafate)
 ════════════════════════════════════════ */
 
@@ -400,30 +300,6 @@
   border-color: rgba(255, 255, 255, 0.60);
   color: #fff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Pills del City Tour en contexto oscuro */
-.services-calafate .pill {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.70);
-}
-
-.services-calafate .pill:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.50);
-  color: #fff;
-}
-
-.services-calafate .pill--active {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.55);
-  color: #fff;
-}
-
-.services-calafate .pill--active:hover {
-  background: rgba(255, 255, 255, 0.30);
-  border-color: rgba(255, 255, 255, 0.70);
 }
 
 /* ════════════════════════════════════════
