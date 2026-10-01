@@ -1,6 +1,6 @@
 # Specs GlacierRoute (etapa 2: rediseño por secciones)
 
-Specs para implementar con Claude Code. Copiá esta carpeta a `glacier-route/docs/specs/` (o a `specs/` en la raíz del repo si querés versionarla, porque `docs/` está en `.gitignore`).
+Specs para implementar con Claude Code. Están versionadas en `specs/`, en la raíz del repo.
 
 ## Orden de trabajo
 
@@ -18,7 +18,7 @@ Specs para implementar con Claude Code. Copiá esta carpeta a `glacier-route/doc
 Una spec por sesión y por rama. Prompt sugerido:
 
 ```
-Leé docs/specs/00-contexto-y-convenciones.md y docs/specs/0X-....md.
+Leé specs/00-contexto-y-convenciones.md y specs/0X-....md.
 Antes de tocar código, mostrame un plan corto con los archivos que vas a crear o cambiar.
 Después implementalo, verificá los criterios de aceptación y hacé commit en la rama feat/0X-...
 ```
