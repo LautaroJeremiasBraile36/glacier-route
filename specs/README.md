@@ -9,9 +9,9 @@ Specs para implementar con Claude Code. Están versionadas en `specs/`, en la ra
 | 00 | [Contexto y convenciones](00-contexto-y-convenciones.md) | No | (no se implementa, se lee siempre) |
 | 01 | [Limpieza de contenido y config central](01-limpieza-y-config.md) | No | `feat/01-limpieza` |
 | 02 | [Sitio multipágina](02-multipagina.md) | No | `feat/02-multipagina` |
-| 03 | [Servicios, cards y reserva](03-servicios-y-reserva.md) | Precios y número (usa marcadores) | `feat/03-servicios` |
+| 03 | [Servicios, cards y reserva](03-servicios-y-reserva.md) | Solo el número nuevo (precios cargados) | `feat/03-servicios` |
 | 04 | [SOS TC: formulario e itinerario](04-sos-tc.md) | Precios por grupo (usa marcadores) | `feat/04-sos-tc` |
-| 05 | [Color, hero e imágenes](05-color-e-imagenes.md) | Sí: paleta e imágenes | `feat/05-identidad` |
+| 05 | [Color, hero e imágenes](05-color-e-imagenes.md) | Sí: paleta (imágenes ya recibidas) | `feat/05-identidad` |
 
 ## Cómo pedírselo a Claude Code
 
