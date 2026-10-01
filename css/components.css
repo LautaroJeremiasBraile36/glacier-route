@@ -408,3 +408,95 @@
 @media (max-width: 767px) {
   .fab--instagram { display: none; }
 }
+
+/* ════════════════════════════════════════
+   CAMPOS DE FORMULARIO Y TOGGLE
+   (modal de reserva y SOS TC)
+════════════════════════════════════════ */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo__label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.campo__req {
+  color: var(--color-terra);
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base); /* 16px: evita el zoom automático de iOS */
+  transition: border-color var(--transition-fast);
+}
+
+.campo input:hover,
+.campo select:hover {
+  border-color: var(--color-text-muted);
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible {
+  border-color: var(--color-glacier);
+  outline-offset: 1px;
+}
+
+.campo__ayuda {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Toggle de vianda ── */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  align-self: flex-start;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.toggle__switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.toggle__switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.toggle[aria-pressed="true"] .toggle__switch {
+  background-color: var(--color-glacier);
+}
+
+.toggle[aria-pressed="true"] .toggle__switch::after {
+  transform: translateX(18px);
+}

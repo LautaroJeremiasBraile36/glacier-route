@@ -103,18 +103,100 @@
       </div>
     </section>
 
-    <!-- Formulario de reserva y Gestión de Itinerario: spec 04 -->
+    <!-- Reserva de grupos con Gestión de Itinerario: lógica en js/sos-tc.js -->
     <section id="itinerario" class="section section--cream" aria-labelledby="itinerario-heading">
-      <div class="container cta-simple">
-        <p class="eyebrow">Gestión de itinerario</p>
-        <h2 id="itinerario-heading" class="section-title">Contanos el plan de tu grupo</h2>
-        <p class="cta-simple__text">Pasanos la cantidad de pasajeros, las fechas y los traslados que necesitás, y te enviamos la cotización.</p>
-        <a href="https://wa.me/5491162806101" class="btn btn--whatsapp js-whatsapp" data-whatsapp-key="grupos" target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <div class="container tc">
+        <p class="eyebrow eyebrow--centered">Reserva de grupos</p>
+        <h2 id="itinerario-heading" class="section-title">Armá el itinerario de tu grupo</h2>
+
+        <form id="tc-form" class="tc__form">
+
+          <fieldset class="tc__bloque">
+            <legend class="tc__legend"><span class="tc__paso" aria-hidden="true">1</span> Datos del coordinador</legend>
+            <div class="tc__grid">
+              <div class="campo">
+                <label for="tc-nombre" class="campo__label">Nombre y apellido <span class="campo__req" aria-hidden="true">*</span></label>
+                <input id="tc-nombre" name="nombre" type="text" autocomplete="name" required />
+              </div>
+              <div class="campo">
+                <label for="tc-agencia" class="campo__label">Agencia u operador</label>
+                <input id="tc-agencia" name="agencia" type="text" autocomplete="organization" />
+              </div>
+              <div class="campo">
+                <label for="tc-telefono" class="campo__label">Teléfono</label>
+                <input id="tc-telefono" name="telefono" type="tel" autocomplete="tel" aria-describedby="tc-telefono-ayuda" />
+                <p id="tc-telefono-ayuda" class="campo__ayuda">Opcional: igual seguimos la charla por WhatsApp.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="tc__bloque">
+            <legend class="tc__legend"><span class="tc__paso" aria-hidden="true">2</span> Tu grupo</legend>
+            <div class="tc__grid">
+              <div class="campo">
+                <label for="tc-grupo" class="campo__label">Tamaño del grupo <span class="campo__req" aria-hidden="true">*</span></label>
+                <!-- Opciones desde TAMANOS_GRUPO (js/data/servicios.js) -->
+                <select id="tc-grupo" name="grupo" required aria-describedby="tc-grupo-ayuda">
+                  <option value="" disabled selected>Elegí una opción</option>
+                </select>
+                <p id="tc-grupo-ayuda" class="campo__ayuda">Elegí el rango que cubra a tu grupo (por ejemplo, un grupo de 7 elige 9).</p>
+              </div>
+              <div class="campo campo--toggle">
+                <span class="campo__label">Vianda</span>
+                <button type="button" id="tc-vianda" class="toggle" aria-pressed="false" aria-describedby="tc-vianda-ayuda">
+                  <span class="toggle__switch" aria-hidden="true"></span>
+                  <span class="toggle__label">Agregar vianda</span>
+                </button>
+                <p id="tc-vianda-ayuda" class="campo__ayuda" data-ayuda-vianda>Te contamos las opciones por WhatsApp.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="tc__bloque">
+            <legend class="tc__legend"><span class="tc__paso" aria-hidden="true">3</span> Días</legend>
+            <div class="tc__grid">
+              <div class="campo">
+                <label for="tc-inicio" class="campo__label">Desde <span class="campo__req" aria-hidden="true">*</span></label>
+                <input id="tc-inicio" name="inicio" type="date" required />
+              </div>
+              <div class="campo">
+                <label for="tc-fin" class="campo__label">Hasta <span class="campo__req" aria-hidden="true">*</span></label>
+                <input id="tc-fin" name="fin" type="date" required />
+              </div>
+            </div>
+            <p id="tc-dias" class="tc__dias" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="tc__gestion">
+            <button type="button" id="tc-gestion" class="btn btn--primary" aria-expanded="false" aria-controls="tc-itinerario" aria-describedby="tc-gestion-ayuda" disabled>
+              Gestión de Itinerario
+            </button>
+            <p id="tc-gestion-ayuda" class="campo__ayuda">Elegí el tamaño del grupo y las fechas para armar el itinerario día por día.</p>
+          </div>
+
+          <div id="tc-itinerario" class="tc__itinerario" hidden>
+            <h3 class="tc__itinerario-titulo">Gestión de Itinerario</h3>
+            <div id="tc-aviso" class="tc__aviso" role="status"></div>
+            <ol id="tc-dias-lista" class="tc__dias-lista" role="list"></ol>
+          </div>
+
+          <div id="tc-resumen" class="tc__resumen" aria-live="polite"></div>
+
+          <div class="tc__acciones">
+            <button type="submit" id="tc-enviar" class="btn btn--whatsapp" disabled>
+              <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
-          Cotizar por WhatsApp
-        </a>
+              Reservar ahora por WhatsApp
+            </button>
+            <p id="tc-pendiente" class="tc__pendiente"></p>
+            <div id="tc-enviado" class="tc__enviado" role="status" hidden>
+              <p><strong>¡Listo! Abrimos WhatsApp con tu itinerario.</strong> Envialo desde ahí y te respondemos con la cotización. Si no se abrió, <a id="tc-enviado-link" target="_blank" rel="noopener noreferrer">tocá acá</a>.</p>
+            </div>
+            <button type="button" id="tc-vaciar" class="tc__vaciar">Empezar de nuevo</button>
+          </div>
+
+        </form>
       </div>
     </section>
 

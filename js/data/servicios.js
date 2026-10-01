@@ -3,6 +3,9 @@
 
 export const PRECIO_VIANDA = 27500; // ARS por persona
 
+// Tamaños de vehículo para grupos (SOS TC): el coordinador elige el que cubre a su grupo
+export const TAMANOS_GRUPO = [5, 9, 12, 19, 24]; // TODO cliente: confirmar tamaños
+
 const img = id => `assets/servicios/${id}.webp`;
 
 export const servicios = [
@@ -23,6 +26,7 @@ export const servicios = [
     nota: null,
     destacado: true,
     precios: { 1: 36000, 2: 40000, 3: 43000, 4: 47000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: false,
     campos: ['fecha', 'personas', 'equipaje', 'vuelo', 'hotel'],
   },
@@ -40,6 +44,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 34000, 2: 38000, 3: 42000, 4: 45000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: false,
     campos: ['fecha', 'hora', 'personas', 'equipaje', 'vuelo', 'hotel'],
   },
@@ -60,6 +65,7 @@ export const servicios = [
     nota: null,
     destacado: true,
     precios: { 1: 148000, 2: 165000, 3: 179000, 4: 192000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'hora', 'personas', 'hotel'],
   },
@@ -80,6 +86,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 202000, 2: 274000, 3: 376000, 4: 456000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'personas', 'hotel'],
   },
@@ -97,6 +104,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 125000, 2: 136000, 3: 150000, 4: 163000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'hora', 'personas', 'hotel'],
   },
@@ -115,6 +123,7 @@ export const servicios = [
     nota: 'Entrada no incluida, solo traslado.',
     destacado: false,
     precios: { 1: 48000, 2: 57000, 3: 66000, 4: 80000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: false,
     campos: ['fecha', 'hora', 'personas', 'hotel'],
   },
@@ -133,6 +142,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 12000, 2: 14000, 3: 16000, 4: 18000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: false,
     campos: ['fecha', 'hora', 'personas', 'equipaje', 'hotel'],
   },
@@ -154,6 +164,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 180000, 2: 200000, 3: 220000, 4: 240000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: false,
     campos: ['fecha', 'hora', 'personas', 'equipaje', 'hotel'],
   },
@@ -174,6 +185,7 @@ export const servicios = [
     nota: null,
     destacado: true,
     precios: { 1: 270000, 2: 290000, 3: 310000, 4: 325000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'personas', 'hotel'],
   },
@@ -194,6 +206,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 295000, 2: 330000, 3: 355000, 4: 380000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'personas', 'hotel'],
   },
@@ -213,6 +226,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 310000, 2: 340000, 3: 365000, 4: 390000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'personas', 'hotel'],
   },
@@ -232,6 +246,7 @@ export const servicios = [
     nota: null,
     destacado: false,
     precios: { 1: 300000, 2: 325000, 3: 345000, 4: 365000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
     vianda: true,
     campos: ['fecha', 'personas', 'hotel'],
   },

@@ -316,21 +316,309 @@
   background-color: var(--color-cream);
 }
 
-.cta-simple {
+/* ── Formulario de grupos ── */
+.tc {
+  max-width: 760px;
+}
+
+.tc__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tc__bloque {
+  min-width: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+.tc__legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-inline: var(--space-xs);
+  margin-left: calc(var(--space-xs) * -1);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.tc__paso {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-glacier);
+  color: var(--color-text-on-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+
+.tc__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+  .tc__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tc__dias {
+  margin-top: var(--space-sm);
+  font-weight: 500;
+  color: var(--color-glacier);
+}
+
+.tc__dias:empty {
+  display: none;
+}
+
+.tc__dias--error {
+  color: var(--color-terra-strong);
+}
+
+.tc__gestion {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   text-align: center;
 }
 
-.cta-simple .section-title {
-  margin-bottom: 0;
+.tc__gestion .btn:disabled,
+.tc__acciones .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-.cta-simple__text {
-  max-width: 560px;
+/* ── Gestión de Itinerario ── */
+.tc__itinerario-titulo {
+  font-size: var(--text-2xl);
   margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.tc__aviso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-terra);
+  font-size: var(--text-sm);
+}
+
+.tc__deshacer {
+  min-height: 44px;
+  padding-inline: var(--space-xs);
+  font-weight: 500;
+  color: var(--color-glacier);
+  text-decoration: underline;
+}
+
+.tc__dias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dia {
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.dia__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-xs);
+}
+
+.dia__titulo {
+  font-size: var(--text-lg);
+}
+
+.dia__num {
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
-  line-height: var(--leading-relaxed);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.dia__vacio {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.dia__traslados {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.traslado {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 8px 8px 12px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-sky);
+}
+
+.traslado__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.traslado__nombre {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.traslado__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.traslado__precio {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-glacier);
+  white-space: nowrap;
+}
+
+.traslado__quitar {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding-inline: 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.traslado__quitar:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dia__agregar {
+  min-height: 44px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-glacier);
+}
+
+.dia__agregar:hover {
+  text-decoration: underline;
+}
+
+.dia__nuevo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-cream);
+}
+
+.dia__nuevo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+  .dia__nuevo-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.dia__nuevo-error:empty {
+  display: none;
+}
+
+.dia__nuevo-error {
+  color: var(--color-terra-strong);
+  font-weight: 500;
+}
+
+.dia__nuevo-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* ── Resumen y envío ── */
+.tc__resumen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-glacier);
+  color: var(--color-text-on-dark);
+}
+
+.tc__resumen-cant {
+  font-weight: 500;
+}
+
+.tc__acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.tc__pendiente {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.tc__pendiente:empty {
+  display: none;
+}
+
+.tc__enviado {
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  font-size: var(--text-sm);
+}
+
+.tc__enviado a {
+  color: var(--color-glacier);
+  text-decoration: underline;
+}
+
+.tc__vaciar {
+  min-height: 44px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: underline;
 }
