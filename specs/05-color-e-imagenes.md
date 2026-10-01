@@ -15,7 +15,7 @@
 
 ## 3. Hero (index)
 
-- Carrusel de 2 o 3 imágenes (fade automático cada 6 s, se pausa con hover o foco, flechas y puntos accesibles, y respeta `prefers-reduced-motion`).
+- Carrusel de 2 o 3 imágenes con fade automático cada 6 s. **Sin controles** (ni pausa, ni flechas, ni puntos) y el hover no lo detiene: las imágenes pasan solas. Con `prefers-reduced-motion` queda fija la primera.
 - Cada slide tiene un título y dos frases, y todos comparten un botón directo: "Reservar ahora" (a `servicios.html`) y la pregunta "¿Llegás a El Calafate? Reservá tu traslado desde el aeropuerto" (abre el formulario de `aeropuerto-llegada`).
 - El video de 28 MB deja de cargarse en el hero. Como mucho, puede quedar en otra sección con `preload="none"`.
 - Imágenes en WebP con fallback JPG, `width` y `height` declarados, y la primera con `fetchpriority="high"`.
@@ -25,8 +25,7 @@
 - Imágenes nuevas del cliente (con personas y un estilo uniforme) en `assets/`, con nombres descriptivos en kebab-case.
 - Una imagen por card de servicio (`imagen` en `servicios.js`).
 - Galería moderna: **carrusel horizontal que se desliza solo** (cinta continua, sin saltos), con proporciones uniformes, bordes redondeados, hover sutil y el lightbox actual al hacer clic. Máximo 12 imágenes, en WebP y con `loading="lazy"`.
-  - Se pausa con hover, con foco de teclado y mientras el lightbox está abierto, y deja de animarse fuera de pantalla.
-  - Botón visible de pausa/reproducir (`aria-label`, `aria-pressed`): el movimiento automático necesita un control para detenerlo.
+  - **Sin botón de pausa** y el hover/foco no la detienen: se mueve sola. Solo se detiene (sin que se note) mientras el lightbox está abierto y fuera de pantalla.
   - Con `prefers-reduced-motion: reduce` no se anima: queda como fila con scroll horizontal manual (scroll-snap).
   - Animación solo con `transform` (CSS keyframes o `requestAnimationFrame`), sin librerías. Las imágenes duplicadas para el loop llevan `aria-hidden="true"` y `tabindex="-1"`.
 

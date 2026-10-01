@@ -1,11 +1,10 @@
 const sinMovimiento = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ── Cinta automática ──
-   Se duplica la lista para que el loop no tenga salto; los clones quedan
-   fuera del árbol de accesibilidad y del orden de tabulación. */
+   Se mueve sola, sin controles. Se duplica la lista para que el loop no tenga salto;
+   los clones quedan fuera del árbol de accesibilidad y del orden de tabulación. */
 function initCinta(viewport) {
   const track = viewport.querySelector('.gallery__track');
-  const boton = document.querySelector('[data-galeria-pausa]');
   if (!track || sinMovimiento()) return;
 
   // Las fotos llegan con data-src (ver cargarFotos): los clones se crean sin descargar nada
@@ -23,13 +22,6 @@ function initCinta(viewport) {
   new IntersectionObserver(([entry]) => {
     viewport.classList.toggle('is-fuera', !entry.isIntersecting);
   }).observe(viewport);
-
-  boton?.addEventListener('click', () => {
-    const pausado = viewport.classList.toggle('is-pausado');
-    boton.dataset.pausado = String(pausado);
-    boton.querySelector('[data-galeria-pausa-texto]').textContent = pausado ? 'Reproducir' : 'Pausar';
-    boton.setAttribute('aria-label', pausado ? 'Reproducir galería' : 'Pausar galería');
-  });
 }
 
 /* ── Fotos: data-src → src cuando la galería se acerca a la pantalla ──
@@ -107,10 +99,8 @@ export function initGallery() {
   function close() {
     lightbox.setAttribute('hidden', '');
     document.body.style.overflow = '';
-    // La cinta sigue pausada solo si el usuario la había pausado con el botón
-    const boton = document.querySelector('[data-galeria-pausa]');
-    if (boton?.dataset.pausado !== 'true') viewport.classList.remove('is-pausado');
-    origen?.focus();
+    viewport.classList.remove('is-pausado');
+    origen?.focus({ preventScroll: true });
   }
 
   function prev() { if (current > 0) show(current - 1); }

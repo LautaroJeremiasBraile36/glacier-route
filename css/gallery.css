@@ -8,11 +8,6 @@
 }
 
 .gallery__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-sm);
   margin-bottom: var(--space-md);
 }
 
@@ -21,30 +16,7 @@
   text-align: left;
 }
 
-.gallery__pausa {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  min-height: 44px;
-  padding: 10px 18px;
-  border: 1.5px solid var(--color-primary);
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-primary);
-  transition: background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.gallery__pausa:hover {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
-}
-
-.gallery__icono-play { display: none; }
-.gallery__pausa[data-pausado="true"] .gallery__icono-play { display: block; }
-.gallery__pausa[data-pausado="true"] .gallery__icono-pausa { display: none; }
-
-/* ── Cinta ── */
+/* ── Cinta (se mueve sola; solo se detiene fuera de pantalla o con el lightbox abierto) ── */
 .gallery__viewport {
   overflow: hidden;
 }
@@ -62,8 +34,6 @@
   to { transform: translateX(calc(-50% - var(--space-sm) / 2)); }
 }
 
-.gallery__viewport:hover .gallery__track,
-.gallery__viewport:focus-within .gallery__track,
 .gallery__viewport.is-pausado .gallery__track,
 .gallery__viewport.is-fuera .gallery__track {
   animation-play-state: paused;
@@ -129,7 +99,7 @@
   transform: scale(1);
 }
 
-/* Sin movimiento: fila con scroll manual y snap (sin clones ni botón de pausa) */
+/* Sin movimiento: fila con scroll manual y snap (sin clones) */
 @media (prefers-reduced-motion: reduce) {
   .gallery__viewport {
     overflow-x: auto;
@@ -143,10 +113,6 @@
 
   .gallery__item {
     scroll-snap-align: start;
-  }
-
-  .gallery__pausa {
-    display: none;
   }
 }
 

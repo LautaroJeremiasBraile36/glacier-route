@@ -72,7 +72,14 @@
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: 96px var(--container-padding) var(--space-md); /* arriba: nav fijo */
+  /* arriba: nav fijo; abajo: lugar para el botón flotante de WhatsApp */
+  padding: 96px var(--container-padding) calc(var(--space-lg) + var(--space-md));
+}
+
+@media (min-width: 768px) {
+  .hero__content {
+    padding-bottom: var(--space-md);
+  }
 }
 
 .hero__eyebrow {
@@ -143,60 +150,3 @@
 .hero__pregunta:hover {
   color: var(--color-text-on-dark-muted);
 }
-
-/* ── Controles del carrusel ── */
-.hero__controles {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-top: var(--space-md);
-}
-
-.hero__control {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-on-dark-border);
-  color: var(--color-text-on-dark);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
-}
-
-.hero__control:hover {
-  background-color: var(--color-on-dark-hover);
-  border-color: var(--color-text-on-dark);
-}
-
-.hero__puntos {
-  display: flex;
-  align-items: center;
-}
-
-/* Área táctil de 44px, punto visible de 10px */
-.hero__punto {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 44px;
-}
-
-.hero__punto::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-text-on-dark);
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
-}
-
-.hero__punto[aria-current="true"]::before {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  transform: scale(1.2);
-}
-
-/* Icono pausa/reproducir según estado */
-.hero__icono-play { display: none; }
-.hero[data-pausado="true"] .hero__icono-play { display: block; }
-.hero[data-pausado="true"] .hero__icono-pausa { display: none; }
