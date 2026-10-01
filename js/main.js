@@ -1,9 +1,9 @@
 import { initNav }                       from './nav.js';
 import { initWhatsApp, getWhatsAppLink } from './whatsapp.js';
 import { initGallery }                   from './gallery.js';
+import { initHero }                      from './hero.js';
 import { initCatalogo }                  from './catalogo.js';
 import { initReserva }                   from './reserva.js';
-import { initSosTc }                     from './sos-tc.js';
 import { INSTAGRAM_URL }                 from './config.js';
 
 // Cada inicializador sale sin hacer nada si su elemento no está en la página
@@ -12,9 +12,10 @@ initWhatsApp();
 initInstagramLinks();
 initCatalogo();
 initReserva();
-initSosTc();
+// SOS TC solo existe en sos-tc.html: se carga bajo demanda
+if (document.getElementById('tc-form')) import('./sos-tc.js').then(m => m.initSosTc());
 initGallery();
-initScrollIndicator();
+initHero();
 initSectionAnimations();
 initFabScrollSpy();
 
@@ -23,18 +24,6 @@ function initInstagramLinks() {
   document.querySelectorAll('.js-instagram').forEach(el => {
     el.href = INSTAGRAM_URL;
   });
-}
-
-/* ── Oculta la flecha del hero al llegar a la sección siguiente ── */
-function initScrollIndicator() {
-  const indicator = document.querySelector('.hero__scroll-indicator');
-  const target    = document.querySelector('.hero')?.nextElementSibling;
-  if (!indicator || !target) return;
-
-  new IntersectionObserver(
-    ([entry]) => indicator.classList.toggle('is-hidden', entry.isIntersecting),
-    { threshold: 0.1 }
-  ).observe(target);
 }
 
 /* ── Fade-in de secciones al entrar en viewport ── */

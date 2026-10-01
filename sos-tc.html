@@ -7,7 +7,6 @@
   <meta name="description" content="Para tour conductors y coordinadores: armá el itinerario de traslados de tu grupo en El Calafate y El Chaltén, con cotización al instante." />
   <meta name="theme-color" content="#001e38" />
   <link rel="icon" href="assets/icon/logo-glacier-route.ico" />
-  <link rel="shortcut icon" href="assets/icon/logo-glacier-route.ico" />
   <link rel="canonical" href="https://www.glacierroute.com.ar/sos-tc.html" />
 
   <!-- Open Graph -->
@@ -27,17 +26,16 @@
   <meta name="twitter:description" content="Para tour conductors y coordinadores: armá el itinerario de traslados de tu grupo en El Calafate y El Chaltén, con cotización al instante." />
   <meta name="twitter:image" content="https://www.glacierroute.com.ar/assets/glaciar/glaciar-hero.jpeg" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Fuentes (locales): DM Sans para el texto, Candide para los títulos -->
+  <link rel="preload" href="assets/fonts/DMSans-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Candide-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- CSS -->
+  <!-- CSS (los que llevan media="print" + onload son de contenido bajo el pliegue: no bloquean el render) -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/contact.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
@@ -71,7 +69,7 @@
 
   <main id="contenido">
 
-    <section class="page-hero page-hero--tc" aria-labelledby="page-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <p class="eyebrow">SOS TC · Coordinadores de grupos</p>
         <h1 id="page-title" class="page-hero__title">Traslados para grupos</h1>
@@ -104,7 +102,7 @@
     </section>
 
     <!-- Reserva de grupos con Gestión de Itinerario: lógica en js/sos-tc.js -->
-    <section id="itinerario" class="section section--cream" aria-labelledby="itinerario-heading">
+    <section id="itinerario" class="section section--alt" aria-labelledby="itinerario-heading">
       <div class="container tc">
         <p class="eyebrow eyebrow--centered">Reserva de grupos</p>
         <h2 id="itinerario-heading" class="section-title">Armá el itinerario de tu grupo</h2>
@@ -209,7 +207,7 @@
 
         <div class="footer__col footer__col--brand">
           <a href="./" class="footer__logo-link" aria-label="Glacier Route — Volver al inicio">
-            <img src="assets/logo-glacier-route.webp" alt="Glacier Route" width="96" height="96" class="footer__logo" />
+            <img src="assets/logo-glacier-route.webp" alt="Glacier Route" width="96" height="96" class="footer__logo" loading="lazy" />
           </a>
           <p class="footer__tagline">Tu anfitrión en la Patagonia</p>
           <p class="footer__location">El Calafate · El Chaltén</p>
@@ -228,7 +226,7 @@
         <div class="footer__col footer__col--qr">
           <p class="footer__qr-text">Escaneame para agendar</p>
           <div class="footer__qr-wrap">
-            <img src="assets/QR/newQR.png" alt="Código QR — contacto por WhatsApp" width="120" height="120" class="footer__qr-img" />
+            <img src="assets/QR/newQR.png" alt="Código QR — contacto por WhatsApp" width="120" height="120" class="footer__qr-img" loading="lazy" />
           </div>
         </div>
 

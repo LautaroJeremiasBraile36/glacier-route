@@ -173,7 +173,7 @@ export const servicios = [
     destino: 'chalten',
     titulo: 'El Chaltén Full Day',
     recorrido: '215 km · 3 h',
-    imagen: 'assets/servicios/chalten-full-day.jpeg', // TODO cliente: falta la versión WebP
+    imagen: img('chalten-full-day'),
     alt: 'Viajero fotografiando el cerro Fitz Roy y una cascada en El Chaltén',
     detalles: [
       'Traslado de ida puntual',

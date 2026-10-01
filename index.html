@@ -7,7 +7,6 @@
   <meta name="description" content="Traslados en El Calafate y El Chaltén: aeropuerto, Glaciar Perito Moreno y Chaltén Full Day. Servicio a medida, puntual y flexible. Reservá por WhatsApp." />
   <meta name="theme-color" content="#001e38" />
   <link rel="icon" href="assets/icon/logo-glacier-route.ico" />
-  <link rel="shortcut icon" href="assets/icon/logo-glacier-route.ico" />
   <link rel="canonical" href="https://www.glacierroute.com.ar/" />
 
   <!-- Open Graph -->
@@ -103,21 +102,20 @@
   }
   </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Fuentes (locales): DM Sans para el texto, Candide para los títulos -->
+  <link rel="preload" href="assets/fonts/DMSans-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Candide-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- CSS -->
+  <!-- CSS (los que llevan media="print" + onload son de contenido bajo el pliegue: no bloquean el render) -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/services.css" />
-  <link rel="stylesheet" href="css/reserva.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
-  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/reserva.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/gallery.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/contact.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
@@ -151,36 +149,57 @@
 
   <main id="contenido">
 
-    <!-- ══════════════════════════ HERO ════════════════════════ -->
-    <section id="inicio" class="hero" aria-label="Presentación principal">
-      <div class="hero__media" aria-hidden="true">
-        <video class="hero__video" autoplay muted loop playsinline>
-          <source src="assets/video/video-hero-nuevo-sin-letras.mp4" type="video/mp4" />
-        </video>
-        <div class="hero__image-fallback"></div>
-      </div>
-      <div class="hero__overlay" aria-hidden="true"></div>
-
-      <div class="hero__content">
-        <p class="hero__eyebrow">El Calafate · El Chaltén</p>
-        <h1 class="hero__headline">Tu anfitrión en la Patagonia</h1>
-        <p class="hero__subheadline">
-          Traslados a tu medida en El Calafate y El Chaltén.<br>
-          Llegás, disfrutás — nosotros nos encargamos del resto.
-        </p>
-        <div class="hero__ctas">
-          <a href="servicios.html" class="btn btn--light">Reservar ahora</a>
-          <a href="https://wa.me/5491162806101" class="btn btn--outline-white js-whatsapp" data-whatsapp-key="generic" target="_blank" rel="noopener noreferrer">
-            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Escribinos por WhatsApp
-          </a>
+    <!-- ══════════════════════════ HERO (carrusel: js/hero.js) ════════════════════════ -->
+    <section id="inicio" class="hero" data-carrusel aria-roledescription="carousel" aria-label="Glacier Route en imágenes">
+      <div class="hero__slides">
+        <div class="hero__slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 3">
+          <img src="assets/hero/viaje-glaciar.webp" alt="Viajeros tomando mate en la camioneta de Glacier Route, frente al Glaciar Perito Moreno" width="1448" height="1086" fetchpriority="high" />
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 de 3">
+          <img data-src="assets/hero/recepcion-aeropuerto.webp" alt="Chofer de Glacier Route recibiendo viajeros junto a la camioneta en el aeropuerto de El Calafate" width="1435" height="1096" />
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 de 3">
+          <img data-src="assets/hero/viaje-fitz-roy.webp" alt="Viajera mirando el cerro Fitz Roy por la ventanilla, camino a El Chaltén" width="1448" height="1086" />
         </div>
       </div>
 
-      <div class="hero__scroll-indicator" aria-hidden="true">
-        <span class="hero__scroll-arrow"></span>
+      <div class="hero__content">
+        <h1 class="visually-hidden">Glacier Route: traslados en El Calafate y El Chaltén</h1>
+        <p class="hero__eyebrow">El Calafate · El Chaltén</p>
+
+        <div class="hero__textos" aria-live="off">
+          <div class="hero__texto is-active">
+            <h2 class="hero__titulo">Tu anfitrión en la Patagonia</h2>
+            <p class="hero__frase">Traslados a tu medida en El Calafate y El Chaltén.<br />Llegás, disfrutás: nosotros nos encargamos del resto.</p>
+          </div>
+          <div class="hero__texto">
+            <h2 class="hero__titulo">Te esperamos en el aeropuerto</h2>
+            <p class="hero__frase">Te recibimos con un cartel con tu nombre.<br />Y te llevamos directo a tu alojamiento.</p>
+          </div>
+          <div class="hero__texto">
+            <h2 class="hero__titulo">Rumbo a El Chaltén</h2>
+            <p class="hero__frase">215 km hasta la Capital Nacional del Trekking.<br />Con café o té y paradas en el camino.</p>
+          </div>
+        </div>
+
+        <div class="hero__ctas">
+          <a href="servicios.html" class="btn btn--light">Reservar ahora</a>
+          <button type="button" class="hero__pregunta" data-reservar="aeropuerto-in" aria-haspopup="dialog">¿Llegás a El Calafate? Reservá tu traslado desde el aeropuerto</button>
+        </div>
+
+        <div class="hero__controles">
+          <button type="button" class="hero__control" data-pausa aria-label="Pausar presentación">
+            <svg class="hero__icono-pausa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <svg class="hero__icono-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <button type="button" class="hero__control" data-anterior aria-label="Imagen anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <div class="hero__puntos">
+            <button type="button" class="hero__punto" data-ir="0" aria-label="Mostrar imagen 1 de 3" aria-current="true"></button>
+            <button type="button" class="hero__punto" data-ir="1" aria-label="Mostrar imagen 2 de 3" aria-current="false"></button>
+            <button type="button" class="hero__punto" data-ir="2" aria-label="Mostrar imagen 3 de 3" aria-current="false"></button>
+          </div>
+          <button type="button" class="hero__control" data-siguiente aria-label="Imagen siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
       </div>
     </section>
 
@@ -247,55 +266,103 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ GALERÍA ════════════════════════ -->
+    <!-- ══════════════════════ GALERÍA (cinta: js/gallery.js) ════════════════════════ -->
     <section id="galeria" class="gallery section" aria-labelledby="galeria-heading">
-      <div class="container">
-        <h2 id="galeria-heading" class="section-title section-title--light">Viví la experiencia</h2>
-      </div>
-      <div class="gallery__grid">
-        <button class="gallery__item" data-index="0" aria-label="Ampliar foto: Trekking en El Chaltén, Patagonia">
-          <img src="assets/chalten/chalten-01.jpeg" alt="Trekking en El Chaltén, Patagonia" width="720" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="1" aria-label="Ampliar foto: Glaciar Perito Moreno, Patagonia argentina">
-          <img src="assets/glaciar/glaciar-02.jpeg" alt="Glaciar Perito Moreno, Patagonia argentina" width="828" height="500" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="2" aria-label="Ampliar foto: Senderos de montaña en El Chaltén">
-          <img src="assets/chalten/chalten-03.jpeg" alt="Senderos de montaña en El Chaltén" width="1280" height="960" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="3" aria-label="Ampliar foto: Vista panorámica en El Chaltén">
-          <img src="assets/chalten/chalten-05.jpeg" alt="Vista panorámica en El Chaltén" width="960" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="4" aria-label="Ampliar foto: Maravilla natural del Glaciar Perito Moreno">
-          <img src="assets/glaciar/glaciar-03.jpeg" alt="Maravilla natural del Glaciar Perito Moreno" width="828" height="609" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="5" aria-label="Ampliar foto: Laguna y montaña en El Chaltén">
-          <img src="assets/chalten/chalten-07.jpeg" alt="Laguna y montaña en El Chaltén" width="720" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="6" aria-label="Ampliar foto: Naturaleza del Parque Nacional Los Glaciares">
-          <img src="assets/glaciar/glaciar-01.jpeg" alt="Naturaleza del Parque Nacional Los Glaciares" width="828" height="473" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
+      <div class="container gallery__header">
+        <div>
+          <p class="eyebrow">Galería</p>
+          <h2 id="galeria-heading" class="section-title">Viví la experiencia</h2>
+        </div>
+        <button type="button" class="gallery__pausa" data-galeria-pausa aria-label="Pausar galería">
+          <svg class="gallery__icono-pausa" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="gallery__icono-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span data-galeria-pausa-texto aria-hidden="true">Pausar</span>
         </button>
       </div>
+
+      <div class="gallery__viewport" data-galeria>
+        <ul class="gallery__track" role="list">
+          <li>
+            <button type="button" class="gallery__item" data-index="0" aria-label="Ampliar foto: Catamarán navegando frente a la pared del Glaciar Perito Moreno">
+              <img data-src="assets/galeria/navegacion-glaciar-800.webp" data-full="assets/galeria/navegacion-glaciar.webp" alt="Catamarán navegando frente a la pared del Glaciar Perito Moreno" width="1295" height="1214" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="1" aria-label="Ampliar foto: Chofer de Glacier Route cargando valijas en la camioneta, en el aeropuerto de El Calafate">
+              <img data-src="assets/galeria/recepcion-valijas-800.webp" data-full="assets/galeria/recepcion-valijas.webp" alt="Chofer de Glacier Route cargando valijas en la camioneta, en el aeropuerto de El Calafate" width="1536" height="1024" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="2" aria-label="Ampliar foto: Viajeros en un mirador con el cerro Fitz Roy y el pueblo de El Chaltén de fondo">
+              <img data-src="assets/galeria/mirador-el-chalten-800.webp" data-full="assets/galeria/mirador-el-chalten.webp" alt="Viajeros en un mirador con el cerro Fitz Roy y el pueblo de El Chaltén de fondo" width="1572" height="1001" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="3" aria-label="Ampliar foto: Viajeros caminando por las pasarelas frente al Glaciar Perito Moreno">
+              <img data-src="assets/galeria/pasarelas-glaciar-800.webp" data-full="assets/galeria/pasarelas-glaciar.webp" alt="Viajeros caminando por las pasarelas frente al Glaciar Perito Moreno" width="1401" height="1123" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="4" aria-label="Ampliar foto: Viajeros frente a la Laguna de los Tres, con el cerro Fitz Roy de fondo">
+              <img data-src="assets/galeria/laguna-de-los-tres-800.webp" data-full="assets/galeria/laguna-de-los-tres.webp" alt="Viajeros frente a la Laguna de los Tres, con el cerro Fitz Roy de fondo" width="1302" height="1208" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="5" aria-label="Ampliar foto: Avión en la plataforma del aeropuerto de El Calafate, con las sierras de fondo">
+              <img data-src="assets/galeria/avion-aeropuerto-800.webp" data-full="assets/galeria/avion-aeropuerto.webp" alt="Avión en la plataforma del aeropuerto de El Calafate, con las sierras de fondo" width="1518" height="1036" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="6" aria-label="Ampliar foto: Pareja frente a una cascada y su laguna de agua turquesa en El Chaltén">
+              <img data-src="assets/galeria/cascada-el-chalten-800.webp" data-full="assets/galeria/cascada-el-chalten.webp" alt="Pareja frente a una cascada y su laguna de agua turquesa en El Chaltén" width="1073" height="1465" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="7" aria-label="Ampliar foto: Pareja cargando una valija en la camioneta de Glacier Route para volver al aeropuerto">
+              <img data-src="assets/galeria/regreso-aeropuerto-800.webp" data-full="assets/galeria/regreso-aeropuerto.webp" alt="Pareja cargando una valija en la camioneta de Glacier Route para volver al aeropuerto" width="1448" height="1086" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="8" aria-label="Ampliar foto: Trekkers contemplando las agujas del Cerro Torre">
+              <img data-src="assets/galeria/cerro-torre-800.webp" data-full="assets/galeria/cerro-torre.webp" alt="Trekkers contemplando las agujas del Cerro Torre" width="1041" height="1511" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="9" aria-label="Ampliar foto: Vista aérea del puerto Punta Bandera, sobre el Lago Argentino">
+              <img data-src="assets/galeria/puerto-punta-bandera-800.webp" data-full="assets/galeria/puerto-punta-bandera.webp" alt="Vista aérea del puerto Punta Bandera, sobre el Lago Argentino" width="1280" height="887" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="10" aria-label="Ampliar foto: Puente rojo sobre el Río Eléctrico con montañas nevadas de fondo">
+              <img data-src="assets/galeria/puente-rio-electrico-800.webp" data-full="assets/galeria/puente-rio-electrico.webp" alt="Puente rojo sobre el Río Eléctrico con montañas nevadas de fondo" width="1600" height="980" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery__item" data-index="11" aria-label="Ampliar foto: Cartel de bienvenida a El Chaltén con el cerro Fitz Roy de fondo">
+              <img data-src="assets/galeria/bienvenida-el-chalten-800.webp" data-full="assets/galeria/bienvenida-el-chalten.webp" alt="Cartel de bienvenida a El Chaltén con el cerro Fitz Roy de fondo" width="1280" height="1089" loading="lazy" />
+              <span class="gallery__overlay" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <figure class="container gallery__video">
+        <video controls preload="none" playsinline width="1920" height="1080" data-poster="assets/hero/viaje-fitz-roy.webp">
+          <source src="assets/video/video-hero-nuevo-sin-letras.mp4" type="video/mp4" />
+        </video>
+        <figcaption>Así se viaja con Glacier Route.</figcaption>
+      </figure>
     </section>
 
     <!-- ══════════════════ CONTACTO CTA #contacto ════════════════════ -->
@@ -329,7 +396,7 @@
 
         <div class="footer__col footer__col--brand">
           <a href="./" class="footer__logo-link" aria-label="Glacier Route — Volver al inicio">
-            <img src="assets/logo-glacier-route.webp" alt="Glacier Route" width="96" height="96" class="footer__logo" />
+            <img src="assets/logo-glacier-route.webp" alt="Glacier Route" width="96" height="96" class="footer__logo" loading="lazy" />
           </a>
           <p class="footer__tagline">Tu anfitrión en la Patagonia</p>
           <p class="footer__location">El Calafate · El Chaltén</p>
@@ -348,7 +415,7 @@
         <div class="footer__col footer__col--qr">
           <p class="footer__qr-text">Escaneame para agendar</p>
           <div class="footer__qr-wrap">
-            <img src="assets/QR/newQR.png" alt="Código QR — contacto por WhatsApp" width="120" height="120" class="footer__qr-img" />
+            <img src="assets/QR/newQR.png" alt="Código QR — contacto por WhatsApp" width="120" height="120" class="footer__qr-img" loading="lazy" />
           </div>
         </div>
 
@@ -393,7 +460,8 @@
       </svg>
     </button>
     <figure class="lightbox__figure">
-      <img class="lightbox__img" src="" alt="" />
+      <img class="lightbox__img" alt="" />
+      <figcaption class="lightbox__caption"></figcaption>
     </figure>
   </div>
 

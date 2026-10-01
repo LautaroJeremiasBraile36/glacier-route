@@ -8,6 +8,9 @@ export function initNav() {
 
   if (!header || !hamburger) return;
 
+  // Sin hero de fotos (páginas internas) el nav es navy sólido desde el inicio
+  header.classList.toggle('site-header--solid', !document.querySelector('.hero'));
+
   // Fondo sólido al hacer scroll
   function onScroll() {
     const scrolled = window.scrollY > 60;
