@@ -24,7 +24,11 @@
 
 - Imágenes nuevas del cliente (con personas y un estilo uniforme) en `assets/`, con nombres descriptivos en kebab-case.
 - Una imagen por card de servicio (`imagen` en `servicios.js`).
-- Galería moderna: grilla con proporciones uniformes, bordes redondeados, hover sutil y el lightbox actual. Máximo 12 imágenes, en WebP y con `loading="lazy"`.
+- Galería moderna: **carrusel horizontal que se desliza solo** (cinta continua, sin saltos), con proporciones uniformes, bordes redondeados, hover sutil y el lightbox actual al hacer clic. Máximo 12 imágenes, en WebP y con `loading="lazy"`.
+  - Se pausa con hover, con foco de teclado y mientras el lightbox está abierto, y deja de animarse fuera de pantalla.
+  - Botón visible de pausa/reproducir (`aria-label`, `aria-pressed`): el movimiento automático necesita un control para detenerlo.
+  - Con `prefers-reduced-motion: reduce` no se anima: queda como fila con scroll horizontal manual (scroll-snap).
+  - Animación solo con `transform` (CSS keyframes o `requestAnimationFrame`), sin librerías. Las imágenes duplicadas para el loop llevan `aria-hidden="true"` y `tabindex="-1"`.
 
 ## Criterios de aceptación
 
