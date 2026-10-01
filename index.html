@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Glacier Route | Traslados El Calafate y El Chaltén" />
-  <meta property="og:description" content="Tu anfitrión en la Patagonia. Traslados a medida en El Calafate y El Chaltén." />
+  <meta property="og:description" content="Traslados en El Calafate y El Chaltén: aeropuerto, Glaciar Perito Moreno y Chaltén Full Day. Servicio a medida, puntual y flexible. Reservá por WhatsApp." />
   <meta property="og:image" content="https://www.glacierroute.com.ar/assets/glaciar/glaciar-hero.jpeg" />
   <meta property="og:image:width" content="828" />
   <meta property="og:image:height" content="689" />
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Glacier Route | Traslados El Calafate y El Chaltén" />
-  <meta name="twitter:description" content="Tu anfitrión en la Patagonia. Traslados a medida en El Calafate y El Chaltén." />
+  <meta name="twitter:description" content="Traslados en El Calafate y El Chaltén: aeropuerto, Glaciar Perito Moreno y Chaltén Full Day. Servicio a medida, puntual y flexible. Reservá por WhatsApp." />
   <meta name="twitter:image" content="https://www.glacierroute.com.ar/assets/glaciar/glaciar-hero.jpeg" />
 
   <!-- Geo -->
@@ -117,14 +117,17 @@
   <link rel="stylesheet" href="css/services.css" />
   <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <!-- NAV: mantener igual en todas las páginas -->
   <header class="site-header" role="banner">
     <nav class="nav" aria-label="Navegación principal">
       <div class="nav__container">
-        <a href="#inicio" class="nav__logo" aria-label="Glacier Route — Ir al inicio">
+        <a href="./" class="nav__logo" aria-label="Glacier Route — Ir al inicio">
           <img src="assets/logo-glacier-route.jpeg" alt="Glacier Route" width="52" height="52" />
         </a>
 
@@ -135,23 +138,23 @@
         </button>
 
         <ul class="nav__links" id="nav-menu" role="list">
-          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
-          <li><a href="#calafate" class="nav__link">El Calafate</a></li>
-          <li><a href="#chalten" class="nav__link">El Chaltén</a></li>
-          <li><a href="#galeria" class="nav__link">Galería</a></li>
-          <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+          <li><a href="./" class="nav__link">Inicio</a></li>
+          <li><a href="servicios.html" class="nav__link">Servicios</a></li>
+          <li><a href="sos-tc.html" class="nav__link">SOS TC</a></li>
+          <li><a href="nosotros.html" class="nav__link">Quiénes somos</a></li>
+          <li><a href="servicios.html" class="nav__link nav__link--cta">Reservar ahora</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main id="contenido">
 
-    <!-- ══════════════════════════ HERO #inicio ════════════════════════ -->
+    <!-- ══════════════════════════ HERO ════════════════════════ -->
     <section id="inicio" class="hero" aria-label="Presentación principal">
       <div class="hero__media" aria-hidden="true">
         <video class="hero__video" autoplay muted loop playsinline>
-          <source src="assets/video/videoHero.mp4" type="video/mp4" />
+          <source src="assets/video/video-hero-nuevo-sin-letras.mp4" type="video/mp4" />
         </video>
         <div class="hero__image-fallback"></div>
       </div>
@@ -165,13 +168,13 @@
           Llegás, disfrutás — nosotros nos encargamos del resto.
         </p>
         <div class="hero__ctas">
-          <a href="https://wa.me/5491162806101" class="btn btn--whatsapp js-whatsapp" data-whatsapp-key="generic" target="_blank" rel="noopener noreferrer" aria-label="Reservar ahora por WhatsApp">
+          <a href="servicios.html" class="btn btn--light">Reservar ahora</a>
+          <a href="https://wa.me/5491162806101" class="btn btn--outline-white js-whatsapp" data-whatsapp-key="generic" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
-            Reservar ahora
+            Escribinos por WhatsApp
           </a>
-          <a href="#nosotros" class="btn btn--outline-white">Ver servicios ↓</a>
         </div>
       </div>
 
@@ -180,28 +183,42 @@
       </div>
     </section>
 
-    <!-- ══════════════════════ NOSOTROS #nosotros ══════════════════════ -->
-    <section id="nosotros" class="nosotros section" aria-labelledby="nosotros-heading">
+    <!-- ═════════════════════ MÁS RECOMENDADOS ═════════════════════ -->
+    <section id="destacados" class="destacados section" aria-labelledby="destacados-heading">
       <div class="container">
-        <div class="nosotros__brand-showcase">
-          <img src="assets/logo-glacier-route.jpeg" alt="Glacier Route" class="nosotros__brand-logo" width="160" height="160" />
-        </div>
+        <p class="eyebrow eyebrow--centered">Los más elegidos</p>
+        <h2 id="destacados-heading" class="section-title">Más recomendados</h2>
+        <!-- Cards generadas desde js/data/servicios.js (destacado: true) -->
+        <div class="servicios-grid" data-destacados></div>
+        <p class="section-link"><a href="servicios.html" class="link-arrow">Ver todos los traslados</a></p>
+      </div>
+    </section>
 
-        <div class="nosotros__grid">
+    <!-- ═════════════════════════ ACCESOS ═════════════════════════ -->
+    <section id="accesos" class="accesos section" aria-label="Elegí cómo viajás">
+      <div class="container accesos__grid">
+        <a href="servicios.html" class="acceso acceso--servicios">
+          <span class="acceso__eyebrow">De 1 a 4 pasajeros</span>
+          <h2 class="acceso__title">Traslados</h2>
+          <p class="acceso__text">Aeropuerto, Glaciar Perito Moreno y El Chaltén. Mirá los precios y reservá en minutos.</p>
+          <span class="acceso__cta">Ver traslados</span>
+        </a>
+        <a href="sos-tc.html" class="acceso acceso--tc">
+          <span class="acceso__eyebrow">Grupos de 5 o más</span>
+          <h2 class="acceso__title">SOS TC</h2>
+          <p class="acceso__text">¿Coordinás un grupo? Armá tu itinerario a medida, con cotización al instante.</p>
+          <span class="acceso__cta">Armar itinerario</span>
+        </a>
+      </div>
+    </section>
 
-          <div class="nosotros__col">
-            <p class="eyebrow">Nuestra historia</p>
-            <h2 id="nosotros-heading" class="nosotros__title"><em>Tu anfitrión en la Patagonia</em></h2>
-            <p class="nosotros__text">Somos una agencia de traslados con base en El Calafate y El Chaltén. Trabajamos con un servicio a medida, personalizado y flexible: nos adaptamos a tu vuelo, a tus horarios y a tu plan de viaje. Nuestro compromiso es simple: puntualidad, flexibilidad y las ganas de vivir juntos una experiencia patagónica.</p>
-          </div>
-
-          <div class="nosotros__col">
-            <p class="eyebrow">Nuestros servicios</p>
-            <h2 class="nosotros__title">Conectando destinos, creando experiencias</h2>
-            <p class="nosotros__text">Te recibimos en el aeropuerto con un cartel con tu nombre, te llevamos al Glaciar Perito Moreno y a sus puertos, y te conectamos con El Chaltén, la Capital Nacional del Trekking. Coordinamos cada trayecto con puntualidad y profesionalismo, para que vos solo te ocupes de disfrutar del paisaje.</p>
-          </div>
-
-        </div>
+    <!-- ═════════════════════ QUIÉNES SOMOS ═════════════════════ -->
+    <section id="nosotros" class="nosotros section" aria-labelledby="nosotros-heading">
+      <div class="container nosotros-franja">
+        <p class="eyebrow">Quiénes somos</p>
+        <h2 id="nosotros-heading" class="nosotros__title"><em>Tu anfitrión en la Patagonia</em></h2>
+        <p class="nosotros__text">Somos una agencia de traslados con base en El Calafate y El Chaltén. Trabajamos con un servicio a medida, personalizado y flexible: nos adaptamos a tu vuelo, a tus horarios y a tu plan de viaje. Nuestro compromiso es simple: puntualidad, flexibilidad y las ganas de vivir juntos una experiencia patagónica.</p>
+        <a href="nosotros.html" class="link-arrow">Conocé más sobre nosotros</a>
 
         <ul class="trust-badges" role="list" aria-label="Por qué elegirnos">
           <li class="trust-badge">
@@ -229,184 +246,54 @@
       </div>
     </section>
 
-    <!-- ══════════════════ CALAFATE #calafate ══════════════════════════ -->
-    <section id="calafate" class="services-calafate section" aria-labelledby="calafate-heading">
-      <div class="container">
-        <h2 id="calafate-heading" class="section-title">Servicios en El Calafate</h2>
-
-        <!-- 3.1 Traslado aeropuerto -->
-        <div class="service-block" id="traslado-aeropuerto">
-          <h3 class="service-block__title">Traslados al aeropuerto</h3>
-          <p class="service-block__desc">Terminá tu viaje sin estrés. Te buscamos puntualmente en tu hotel o te recibimos en el aeropuerto con cartel identificatorio. El primer y último contacto de tu estadía, en manos confiables.</p>
-
-          <div class="service-block__banner">
-            <img src="assets/aeropuerto/aeropuerto1.jpg" alt="Aeropuerto Internacional Malvinas Argentinas, El Calafate" width="1170" height="470" />
-            <span class="service-block__banner-label">Aeropuerto El Calafate</span>
-          </div>
-
-          <div class="cards-row">
-            <div class="card card--transfer card--visual">
-              <div class="card__image-wrap">
-                <img class="card__image" src="assets/aeropuerto/avion-aeropuerto-calafate.png" alt="Avión en el aeropuerto de El Calafate" width="1280" height="853" loading="lazy" />
-              </div>
-              <div class="card__body">
-                <h4 class="card__title">Aeropuerto → Ciudad</h4>
-                <ul class="card__list" role="list">
-                  <li>Recepción con cartel con tu nombre</li>
-                  <li>Traslado directo a tu alojamiento</li>
-                </ul>
-                <a href="#" class="btn btn--primary js-whatsapp" data-whatsapp-key="aeropuerto_in">Reservar ahora</a>
-              </div>
-            </div>
-            <div class="card card--transfer card--visual">
-              <div class="card__image-wrap">
-                <video autoplay muted loop playsinline aria-hidden="true">
-                  <source src="assets/aeropuerto/plano-volando-desde-avion-calafate.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div class="card__body">
-                <h4 class="card__title">Ciudad → Aeropuerto</h4>
-                <ul class="card__list" role="list">
-                  <li>Búsqueda puntual en tu hotel</li>
-                  <li>Traslado a tiempo a la terminal</li>
-                </ul>
-                <a href="#" class="btn btn--primary js-whatsapp" data-whatsapp-key="aeropuerto_out">Reservar ahora</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3.2 Glaciar Perito Moreno -->
-        <div class="service-block" id="glaciar-perito-moreno">
-          <h3 class="service-block__title">Glaciar Perito Moreno</h3>
-          <p class="service-block__desc">Una de las maravillas naturales más imponentes del planeta, a pocos kilómetros de El Calafate. Elegí el servicio que se adapta a tu plan.</p>
-
-          <div class="cards-row cards-row--three">
-            <div class="card card--glaciar">
-              <h4 class="card__title">Solo ida</h4>
-              <p class="card__text">Conexión directa al Parque Nacional</p>
-              <a href="#" class="btn btn--secondary js-whatsapp" data-whatsapp-key="glaciar_ida">Reservar ahora</a>
-            </div>
-            <div class="card card--glaciar">
-              <h4 class="card__title">Traslado a puertos</h4>
-              <p class="card__text">Especial para quienes realizan navegaciones</p>
-              <a href="#" class="btn btn--secondary js-whatsapp" data-whatsapp-key="glaciar_puertos">Reservar ahora</a>
-            </div>
-            <div class="card card--glaciar card--featured">
-              <span class="card__badge">Más elegido</span>
-              <h4 class="card__title">Ida, vuelta y pasarelas</h4>
-              <p class="card__text">Nuestro servicio estrella. Hasta 3 horas de espera para recorrer las pasarelas a tu propio ritmo.</p>
-              <a href="#" class="btn btn--primary js-whatsapp" data-whatsapp-key="glaciar_completo">Reservar ahora</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ════════════════════ CHALTÉN #chalten ════════════════════════ -->
-    <section id="chalten" class="services-chalten section" aria-labelledby="chalten-heading">
-      <div class="container">
-        <p class="eyebrow eyebrow--centered">Capital Nacional del Trekking</p>
-        <h2 id="chalten-heading" class="section-title">Servicios hacia El Chaltén</h2>
-
-        <div class="cards-row cards-row--three">
-          <div class="card card--chalten">
-            <h3 class="card__title">Solo ida</h3>
-            <p class="card__text">Traslado directo desde El Calafate</p>
-            <a href="#" class="btn btn--secondary js-whatsapp" data-whatsapp-key="chalten_ida">Reservar ahora</a>
-          </div>
-          <div class="card card--chalten">
-            <h3 class="card__title">Chaltén → Aeropuerto</h3>
-            <p class="card__text">Regreso eficiente hacia el aeropuerto de El Calafate</p>
-            <a href="#" class="btn btn--secondary js-whatsapp" data-whatsapp-key="chalten_aeropuerto">Reservar ahora</a>
-          </div>
-          <div class="card card--chalten">
-            <h3 class="card__title">Chaltén Full Day</h3>
-            <p class="card__text">Experiencia de día completo. Ideal para quienes quieren conocer los hitos principales con tiempo limitado.</p>
-            <a href="#" class="btn btn--secondary js-whatsapp" data-whatsapp-key="chalten_fullday">Reservar ahora</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════ GALERÍA #galeria ════════════════════════ -->
+    <!-- ══════════════════════ GALERÍA ════════════════════════ -->
     <section id="galeria" class="gallery section" aria-labelledby="galeria-heading">
       <div class="container">
         <h2 id="galeria-heading" class="section-title section-title--light">Viví la experiencia</h2>
       </div>
       <div class="gallery__grid">
-
-        <!-- El Chaltén — 8 imágenes (la 1° fue al fondo de la sección Chaltén) -->
-        <button class="gallery__item" data-index="0" aria-label="Ver imagen de El Chaltén 1">
+        <button class="gallery__item" data-index="0" aria-label="Ampliar foto: Trekking en El Chaltén, Patagonia">
           <img src="assets/chalten/chalten-01.jpeg" alt="Trekking en El Chaltén, Patagonia" width="720" height="1280" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
-        <button class="gallery__item" data-index="1" aria-label="Ver imagen de El Chaltén 2">
-          <img src="assets/chalten/chalten-02.jpeg" alt="Montañas de El Chaltén" width="720" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="2" aria-label="Ver imagen de El Chaltén 3">
-          <img src="assets/chalten/chalten-03.jpeg" alt="Senderos de montaña en El Chaltén" width="1280" height="960" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="3" aria-label="Ver imagen de El Chaltén 4">
-          <img src="assets/chalten/chalten-04.jpeg" alt="Naturaleza patagónica en El Chaltén" width="960" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="4" aria-label="Ver imagen de El Chaltén 5">
-          <img src="assets/chalten/chalten-05.jpeg" alt="Vista panorámica en El Chaltén" width="960" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="5" aria-label="Ver imagen de El Chaltén 6">
-          <img src="assets/chalten/chalten-06.jpeg" alt="Sendero de trekking en El Chaltén" width="960" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="6" aria-label="Ver imagen de El Chaltén 7">
-          <img src="assets/chalten/chalten-07.jpeg" alt="Laguna y montaña en El Chaltén" width="720" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="7" aria-label="Ver imagen de El Chaltén 8">
-          <img src="assets/chalten/chalten-08.jpeg" alt="Paisaje patagónico de El Chaltén" width="720" height="1280" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-
-        <!-- Glaciar Perito Moreno — 3 imágenes (la 1° fue al fondo de la sección Calafate) -->
-        <button class="gallery__item" data-index="8" aria-label="Ver imagen del Glaciar Perito Moreno 1">
-          <img src="assets/glaciar/glaciar-01.jpeg" alt="Naturaleza del Parque Nacional Los Glaciares" width="828" height="473" loading="lazy" />
-          <div class="gallery__overlay" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </button>
-        <button class="gallery__item" data-index="9" aria-label="Ver imagen del Glaciar Perito Moreno 2">
+        <button class="gallery__item" data-index="1" aria-label="Ampliar foto: Glaciar Perito Moreno, Patagonia argentina">
           <img src="assets/glaciar/glaciar-02.jpeg" alt="Glaciar Perito Moreno, Patagonia argentina" width="828" height="500" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
-        <button class="gallery__item" data-index="10" aria-label="Ver imagen del Glaciar Perito Moreno 3">
+        <button class="gallery__item" data-index="2" aria-label="Ampliar foto: Senderos de montaña en El Chaltén">
+          <img src="assets/chalten/chalten-03.jpeg" alt="Senderos de montaña en El Chaltén" width="1280" height="960" loading="lazy" />
+          <div class="gallery__overlay" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </button>
+        <button class="gallery__item" data-index="3" aria-label="Ampliar foto: Vista panorámica en El Chaltén">
+          <img src="assets/chalten/chalten-05.jpeg" alt="Vista panorámica en El Chaltén" width="960" height="1280" loading="lazy" />
+          <div class="gallery__overlay" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </button>
+        <button class="gallery__item" data-index="4" aria-label="Ampliar foto: Maravilla natural del Glaciar Perito Moreno">
           <img src="assets/glaciar/glaciar-03.jpeg" alt="Maravilla natural del Glaciar Perito Moreno" width="828" height="609" loading="lazy" />
           <div class="gallery__overlay" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </button>
-
+        <button class="gallery__item" data-index="5" aria-label="Ampliar foto: Laguna y montaña en El Chaltén">
+          <img src="assets/chalten/chalten-07.jpeg" alt="Laguna y montaña en El Chaltén" width="720" height="1280" loading="lazy" />
+          <div class="gallery__overlay" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </button>
+        <button class="gallery__item" data-index="6" aria-label="Ampliar foto: Naturaleza del Parque Nacional Los Glaciares">
+          <img src="assets/glaciar/glaciar-01.jpeg" alt="Naturaleza del Parque Nacional Los Glaciares" width="828" height="473" loading="lazy" />
+          <div class="gallery__overlay" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </button>
       </div>
     </section>
 
@@ -434,13 +321,13 @@
 
   </main>
 
-  <!-- ══════════════════════════ FOOTER ══════════════════════════════ -->
+  <!-- FOOTER: mantener igual en todas las páginas -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
 
         <div class="footer__col footer__col--brand">
-          <a href="#inicio" class="footer__logo-link" aria-label="Glacier Route — Volver al inicio">
+          <a href="./" class="footer__logo-link" aria-label="Glacier Route — Volver al inicio">
             <img src="assets/logo-glacier-route.jpeg" alt="Glacier Route" width="96" height="96" class="footer__logo" />
           </a>
           <p class="footer__tagline">Tu anfitrión en la Patagonia</p>
@@ -448,13 +335,12 @@
         </div>
 
         <nav class="footer__col footer__col--nav" aria-label="Navegación del pie de página">
-          <h3 class="footer__nav-title">Navegación</h3>
+          <h2 class="footer__nav-title">Navegación</h2>
           <ul class="footer__nav-links" role="list">
-            <li><a href="#nosotros" class="footer__link">Nosotros</a></li>
-            <li><a href="#calafate" class="footer__link">El Calafate</a></li>
-            <li><a href="#chalten" class="footer__link">El Chaltén</a></li>
-            <li><a href="#galeria" class="footer__link">Galería</a></li>
-            <li><a href="#contacto" class="footer__link">Contacto</a></li>
+            <li><a href="./" class="footer__link">Inicio</a></li>
+            <li><a href="servicios.html" class="footer__link">Servicios</a></li>
+            <li><a href="sos-tc.html" class="footer__link">SOS TC</a></li>
+            <li><a href="nosotros.html" class="footer__link">Quiénes somos</a></li>
           </ul>
         </nav>
 
@@ -477,13 +363,13 @@
   <div class="floating-buttons" aria-label="Contacto rápido">
     <a href="https://wa.me/5491162806101" class="fab fab--whatsapp js-whatsapp" data-whatsapp-key="generic" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
       <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
     </a>
     <a href="https://www.instagram.com/traslados.elcalafate?igsh=dmVlcjQ0a2Q4OHNq" class="fab fab--instagram js-instagram" aria-label="Visitar Instagram" target="_blank" rel="noopener noreferrer">
       <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
     </a>
   </div>
 

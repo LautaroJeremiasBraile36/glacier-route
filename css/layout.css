@@ -15,68 +15,6 @@
 .gallery           { background-color: var(--color-stone); }
 .contact-cta       { background-color: var(--color-glacier); }
 
-/* ── Calafate: sección con imagen de fondo ── */
-.services-calafate {
-  position: relative;
-  isolation: isolate;
-  background-image: url("../assets/glaciar/glaciar-calafate-bg.jpeg");
-  background-size: cover;
-  background-position: center 35%;
-}
-
-.services-calafate::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(8, 14, 20, 0.78) 0%,
-    rgba(8, 14, 20, 0.65) 100%
-  );
-  z-index: -1;
-}
-
-.services-calafate .section-title {
-  color: var(--color-text-on-dark);
-}
-
-.services-calafate .service-block__title {
-  color: var(--color-text-on-dark);
-}
-
-.services-calafate .service-block__desc {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-/* ── Chaltén: sección con imagen de fondo ── */
-.services-chalten {
-  position: relative;
-  isolation: isolate;
-  background-image: url("../assets/chalten/chalten-bg.jpeg");
-  background-size: cover;
-  background-position: center 40%;
-}
-
-.services-chalten::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(10, 16, 22, 0.72) 0%,
-    rgba(10, 16, 22, 0.60) 100%
-  );
-  z-index: -1;
-}
-
-.services-chalten .section-title {
-  color: var(--color-text-on-dark);
-}
-
-.services-chalten .eyebrow {
-  color: var(--color-sky);
-}
-
 /* ── Tipografía compartida ── */
 .eyebrow {
   font-family: var(--font-body);

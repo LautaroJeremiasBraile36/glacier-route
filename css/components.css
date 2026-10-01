@@ -59,6 +59,19 @@
   border-color: #fff;
 }
 
+/* Light — blanco sobre fondos oscuros (CTA principal del hero) */
+.btn--light {
+  background-color: var(--color-surface);
+  color: var(--color-glacier);
+  border-color: var(--color-surface);
+}
+
+.btn--light:hover {
+  background-color: var(--color-sky);
+  border-color: var(--color-sky);
+  box-shadow: var(--shadow-md);
+}
+
 /* Primary — azul glaciar */
 .btn--primary {
   background-color: var(--color-cta);

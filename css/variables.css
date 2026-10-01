@@ -14,6 +14,11 @@
   --color-surface: #ffffff;
   --color-border: rgba(28, 28, 26, 0.12);
 
+  /* ── Overlays sobre fotos (texto blanco legible) ── */
+  --color-overlay-strong: rgba(0, 18, 34, 0.78);
+  --color-overlay-mid: rgba(0, 18, 34, 0.62);
+  --color-overlay-soft: rgba(0, 18, 34, 0.45);
+
   /* ── CTAs ── */
   --color-cta: #001e38;
   --color-cta-hover: #00315f;

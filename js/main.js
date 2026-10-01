@@ -1,11 +1,14 @@
 import { initNav }                       from './nav.js';
 import { initWhatsApp, getWhatsAppLink } from './whatsapp.js';
 import { initGallery }                   from './gallery.js';
+import { initCatalogo }                  from './catalogo.js';
 import { INSTAGRAM_URL }                 from './config.js';
 
+// Cada inicializador sale sin hacer nada si su elemento no está en la página
 initNav();
 initWhatsApp();
 initInstagramLinks();
+initCatalogo();
 initGallery();
 initScrollIndicator();
 initSectionAnimations();
@@ -18,10 +21,10 @@ function initInstagramLinks() {
   });
 }
 
-/* ── Oculta la flecha del hero al llegar a #nosotros ── */
+/* ── Oculta la flecha del hero al llegar a la sección siguiente ── */
 function initScrollIndicator() {
   const indicator = document.querySelector('.hero__scroll-indicator');
-  const target    = document.getElementById('nosotros');
+  const target    = document.querySelector('.hero')?.nextElementSibling;
   if (!indicator || !target) return;
 
   new IntersectionObserver(
@@ -59,7 +62,7 @@ function initFabScrollSpy() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const key = sectionKeys[entry.target.id] ?? 'generic';
+      const key = sectionKeys[entry.target.id] ?? fab.dataset.whatsappKey ?? 'generic';
       fab.href = getWhatsAppLink(key);
     });
   }, {
