@@ -1,28 +1,53 @@
 :root {
-  /* ── Colores primarios ── */
-  --color-stone: #1c1c1a;
-  --color-glacier: #001e38;   /* navy — brandboard primary */
-  --color-sky: #e8f4f8;
-  --color-terra: #c57b30;     /* amber copper — brandboard accent */
-  --color-cream: #f5f0e8;
+  /* ══ Paleta del brandboard: navy, cobre y blanco ══ */
+  --brand-navy: #001e38;
+  --brand-copper: #c57b30;
+  --brand-white: #ffffff;
 
-  /* ── Colores funcionales ── */
-  --color-text: #1c1c1a;
-  --color-text-muted: #6b6b65;
-  --color-text-on-dark: #ffffff;
+  /* ── Colores por función ── */
+  --color-primary: var(--brand-navy);          /* nav con scroll, CTA, títulos, botones */
+  --color-primary-dark: #00111f;               /* footer */
+  --color-surface: var(--brand-white);         /* fondo base */
+  --color-surface-alt: #eef4f9;                /* celeste claro: secciones alternas */
+  --color-accent: var(--brand-copper);         /* solo acentos gráficos: íconos, bordes, ✓ */
+  --color-accent-hover: #9a5a1f;               /* cobre oscuro: texto, badges y hover de "Reservar ahora" (AA con blanco: 5.45:1) */
+  --color-text: #12202d;
+  --color-text-muted: #55606b;                 /* 5.8:1 sobre celeste claro */
+  --color-text-on-dark: var(--brand-white);
   --color-text-on-dark-muted: rgba(255, 255, 255, 0.85);
-  --color-surface: #ffffff;
-  --color-border: rgba(28, 28, 26, 0.12);
+  --color-text-on-dark-subtle: rgba(255, 255, 255, 0.68);
+  --color-border: rgba(18, 32, 45, 0.12);
 
-  /* ── CTAs ── */
-  --color-cta: #001e38;
-  --color-cta-hover: #00315f;
+  /* ── Sobre fondos oscuros ── */
+  --color-on-dark-line: rgba(255, 255, 255, 0.14);
+  --color-on-dark-hover: rgba(255, 255, 255, 0.12);
+  --color-on-dark-border: rgba(255, 255, 255, 0.55);
+
+  /* ── Overlays sobre fotos (texto blanco legible) ── */
+  --color-overlay-strong: rgba(0, 18, 34, 0.78);
+  --color-overlay-mid: rgba(0, 18, 34, 0.62);
+  --color-overlay-soft: rgba(0, 18, 34, 0.45);
+  --color-overlay-clear: rgba(0, 18, 34, 0);
+  --color-backdrop: rgba(0, 10, 20, 0.93);     /* lightbox */
+
+  /* ── Marcas de terceros ── */
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1da851;
+  --gradient-instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+
+  /* ── Alias de los tokens anteriores ── */
+  --color-glacier: var(--color-primary);
+  --color-terra: var(--color-accent);
+  --color-terra-strong: var(--color-accent-hover);
+  --color-sky: var(--color-surface-alt);
+  --color-cream: var(--color-surface-alt);
+  --color-stone: var(--color-primary-dark);
+  --color-cta: var(--color-primary);
+  --color-cta-hover: var(--color-accent-hover);
 
   /* ── Tipografía ── */
-  /* Brandboard: Candide (Camelot Typefaces) — agregar archivos .woff2 en /assets/fonts/ y descomentar @font-face en reset.css */
-  --font-display: "Candide", "Playfair Display", Georgia, serif;
+  /* Brandboard: Candide (local, assets/fonts/) para títulos */
+  --font-display: "Candide", Georgia, serif;
   --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-xs: 0.75rem;
@@ -62,6 +87,12 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
   --shadow-fab: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-fab-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-primary: 0 6px 16px rgba(0, 30, 56, 0.3);
+  --shadow-whatsapp: 0 6px 16px rgba(37, 211, 102, 0.35);
+  --shadow-logo: 0 8px 32px rgba(0, 30, 56, 0.18), 0 2px 8px rgba(0, 30, 56, 0.1);
+  --shadow-logo-hover: 0 16px 48px rgba(0, 30, 56, 0.22), 0 4px 12px rgba(0, 30, 56, 0.12);
+  --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.18);
 
   /* ── Transiciones ── */
   --transition-fast: 150ms ease;

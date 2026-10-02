@@ -1,10 +1,15 @@
+// "/", "/index.html", "/servicios.html" y "/servicios" (URLs limpias del hosting) → misma clave
+const normalizar = path => path.replace(/index\.html$/, '').replace(/\.html$/, '');
+
 export function initNav() {
   const header = document.querySelector('.site-header');
   const hamburger = document.querySelector('.nav__hamburger');
   const navLinks = document.querySelectorAll('.nav__link');
-  const sections = document.querySelectorAll('section[id]');
 
   if (!header || !hamburger) return;
+
+  // Sin hero de fotos (páginas internas) el nav es navy sólido desde el inicio
+  header.classList.toggle('site-header--solid', !document.querySelector('.hero'));
 
   // Fondo sólido al hacer scroll
   function onScroll() {
@@ -37,20 +42,12 @@ export function initNav() {
     }
   });
 
-  // Scroll spy — marca el link activo según la sección visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        const isActive = link.getAttribute('href') === `#${id}`;
-        link.classList.toggle('nav__link--active', isActive);
-      });
-    });
-  }, {
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0,
+  // Link activo según la página actual (el botón CTA no se marca)
+  const actual = normalizar(location.pathname);
+  navLinks.forEach(link => {
+    if (link.classList.contains('nav__link--cta')) return;
+    const isActive = normalizar(new URL(link.href).pathname) === actual;
+    link.classList.toggle('nav__link--active', isActive);
+    if (isActive) link.setAttribute('aria-current', 'page');
   });
-
-  sections.forEach(section => observer.observe(section));
 }

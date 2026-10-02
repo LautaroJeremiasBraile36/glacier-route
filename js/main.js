@@ -1,24 +1,29 @@
 import { initNav }                       from './nav.js';
 import { initWhatsApp, getWhatsAppLink } from './whatsapp.js';
 import { initGallery }                   from './gallery.js';
+import { initHero }                      from './hero.js';
+import { initCatalogo }                  from './catalogo.js';
+import { initReserva }                   from './reserva.js';
+import { INSTAGRAM_URL }                 from './config.js';
 
+// Cada inicializador sale sin hacer nada si su elemento no está en la página
 initNav();
 initWhatsApp();
+initInstagramLinks();
+initCatalogo();
+initReserva();
+// SOS TC solo existe en sos-tc.html: se carga bajo demanda
+if (document.getElementById('tc-form')) import('./sos-tc.js').then(m => m.initSosTc());
 initGallery();
-initScrollIndicator();
+initHero();
 initSectionAnimations();
 initFabScrollSpy();
 
-/* ── Oculta la flecha del hero al llegar a #nosotros ── */
-function initScrollIndicator() {
-  const indicator = document.querySelector('.hero__scroll-indicator');
-  const target    = document.getElementById('nosotros');
-  if (!indicator || !target) return;
-
-  new IntersectionObserver(
-    ([entry]) => indicator.classList.toggle('is-hidden', entry.isIntersecting),
-    { threshold: 0.1 }
-  ).observe(target);
+/* ── Links de Instagram desde js/config.js ── */
+function initInstagramLinks() {
+  document.querySelectorAll('.js-instagram').forEach(el => {
+    el.href = INSTAGRAM_URL;
+  });
 }
 
 /* ── Fade-in de secciones al entrar en viewport ── */
@@ -50,7 +55,7 @@ function initFabScrollSpy() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const key = sectionKeys[entry.target.id] ?? 'generic';
+      const key = sectionKeys[entry.target.id] ?? fab.dataset.whatsappKey ?? 'generic';
       fab.href = getWhatsAppLink(key);
     });
   }, {

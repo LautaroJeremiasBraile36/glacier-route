@@ -1,0 +1,253 @@
+// Fuente única de los traslados: las cards y los formularios se generan desde acá.
+// Copys y precios: assets/Copys de Traslados.md (cliente, octubre 2026).
+
+export const PRECIO_VIANDA = 27500; // ARS por persona
+
+// Tamaños de vehículo para grupos (SOS TC): el coordinador elige el que cubre a su grupo
+export const TAMANOS_GRUPO = [5, 9, 12, 19, 24]; // TODO cliente: confirmar tamaños
+
+const img = id => `assets/servicios/${id}.webp`;
+
+export const servicios = [
+  // ── El Calafate ──
+  {
+    id: 'aeropuerto-in',
+    destino: 'calafate',
+    titulo: 'Aeropuerto IN',
+    recorrido: '18 km · 30 min',
+    imagen: img('aeropuerto-in'),
+    alt: 'Avión en la plataforma del aeropuerto de El Calafate, con las sierras de fondo',
+    detalles: [
+      'Traslado puntual hacia la ciudad de El Calafate',
+      'Te esperamos con un cartel con tu nombre y cantidad de pasajeros',
+      'Baúl amplio para tus valijas',
+      'Te llevamos a tu hotel o alojamiento',
+    ],
+    nota: null,
+    destacado: true,
+    precios: { 1: 36000, 2: 40000, 3: 43000, 4: 47000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: false,
+    campos: ['fecha', 'personas', 'equipaje', 'vuelo', 'hotel'],
+  },
+  {
+    id: 'aeropuerto-out',
+    destino: 'calafate',
+    titulo: 'Aeropuerto OUT',
+    recorrido: '18 km · 30 min',
+    imagen: img('aeropuerto-out'),
+    alt: 'Chofer de Glacier Route cargando valijas en el auto frente a la terminal del aeropuerto',
+    detalles: [
+      'Traslado puntual hacia el aeropuerto',
+      'Baúl amplio para tus valijas',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 34000, 2: 38000, 3: 42000, 4: 45000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: false,
+    campos: ['fecha', 'hora', 'personas', 'equipaje', 'vuelo', 'hotel'],
+  },
+  {
+    id: 'glaciar-pasarelas',
+    destino: 'calafate',
+    titulo: 'Traslado a Pasarelas Glaciar Perito Moreno',
+    recorrido: '80 km · 1 h 30 min',
+    imagen: img('glaciar-pasarelas'),
+    alt: 'Viajeros caminando por las pasarelas frente al Glaciar Perito Moreno',
+    detalles: [
+      'Traslado desde tu hotel o alojamiento',
+      'Café o té para el viaje',
+      'Una parada para tomar fotos',
+      '3 h de pasarelas frente al glaciar',
+      'Regreso a tu hotel o alojamiento',
+    ],
+    nota: null,
+    destacado: true,
+    precios: { 1: 148000, 2: 165000, 3: 179000, 4: 192000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'hora', 'personas', 'hotel'],
+  },
+  {
+    id: 'glaciar-pasarelas-navegacion',
+    destino: 'calafate',
+    titulo: 'Pasarelas + Navegación 1 h',
+    recorrido: null,
+    imagen: img('glaciar-pasarelas-navegacion'),
+    alt: 'Pasarelas del Glaciar Perito Moreno y un catamarán navegando frente a la pared de hielo',
+    detalles: [
+      'Traslado al Parque Nacional Los Glaciares',
+      'Café o té para el viaje',
+      '3 h de pasarelas',
+      '1 h de navegación',
+      'Regreso a tu hotel o alojamiento',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 202000, 2: 274000, 3: 376000, 4: 456000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'personas', 'hotel'],
+  },
+  {
+    id: 'puerto-punta-bandera',
+    destino: 'calafate',
+    titulo: 'Traslado a Puerto Punta Bandera',
+    recorrido: '47 km · 1 h',
+    imagen: img('puerto-punta-bandera'),
+    alt: 'Vista aérea del puerto Punta Bandera con catamaranes amarrados en el Lago Argentino',
+    detalles: [
+      'Traslado puntual desde tu hotel o alojamiento',
+      'Regreso al finalizar tu navegación',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 125000, 2: 136000, 3: 150000, 4: 163000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'hora', 'personas', 'hotel'],
+  },
+  {
+    id: 'punta-walichu',
+    destino: 'calafate',
+    titulo: 'Traslado a Punta Walichu',
+    recorrido: '8 km · 25 min',
+    imagen: img('punta-walichu'),
+    alt: 'Viajeros junto al cartel de la zona arqueológica de Punta Walichu y pinturas rupestres en la roca',
+    detalles: [
+      'Ida desde tu hotel o alojamiento',
+      'Espera de 1 h, lo que dura el recorrido autoguiado',
+      'Regreso a tu hotel o alojamiento',
+    ],
+    nota: 'Entrada no incluida, solo traslado.',
+    destacado: false,
+    precios: { 1: 48000, 2: 57000, 3: 66000, 4: 80000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: false,
+    campos: ['fecha', 'hora', 'personas', 'hotel'],
+  },
+  {
+    id: 'estacion-bus',
+    destino: 'calafate',
+    titulo: 'Traslado a la Estación de Bus',
+    recorrido: null,
+    imagen: img('estacion-bus'),
+    alt: 'Pasajeros con valijas subiendo a un micro en la terminal de ómnibus',
+    detalles: [
+      'Ida puntual desde tu hotel o alojamiento',
+      'Café o té',
+      'Baúl amplio para valijas',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 12000, 2: 14000, 3: 16000, 4: 18000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: false,
+    campos: ['fecha', 'hora', 'personas', 'equipaje', 'hotel'],
+  },
+
+  // ── El Chaltén ──
+  {
+    id: 'chalten-traslado',
+    destino: 'chalten',
+    titulo: 'Traslado hasta El Chaltén',
+    recorrido: '215 km · 2 h 40 min',
+    imagen: img('chalten-traslado'),
+    alt: 'Cartel de bienvenida a El Chaltén con el cerro Fitz Roy de fondo',
+    detalles: [
+      'Traslado puntual a El Chaltén',
+      'Café o té de cortesía',
+      'Parada a mitad de camino para ir al baño',
+      'Te llevamos a tu hotel o alojamiento',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 180000, 2: 200000, 3: 220000, 4: 240000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: false,
+    campos: ['fecha', 'hora', 'personas', 'equipaje', 'hotel'],
+  },
+  {
+    id: 'chalten-full-day',
+    destino: 'chalten',
+    titulo: 'El Chaltén Full Day',
+    recorrido: '215 km · 3 h',
+    imagen: img('chalten-full-day'),
+    alt: 'Viajero fotografiando el cerro Fitz Roy y una cascada en El Chaltén',
+    detalles: [
+      'Traslado de ida puntual',
+      'Café o té para el viaje',
+      'Parada en el histórico Parador La Leona',
+      '3 trekkings: miradores y cascada',
+      'Regreso a tu alojamiento en El Calafate',
+    ],
+    nota: null,
+    destacado: true,
+    precios: { 1: 270000, 2: 290000, 3: 310000, 4: 325000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'personas', 'hotel'],
+  },
+  {
+    id: 'chalten-rio-electrico',
+    destino: 'chalten',
+    titulo: 'El Chaltén + Río Eléctrico',
+    recorrido: '231 km · 3 h 10 min',
+    imagen: img('chalten-rio-electrico'),
+    alt: 'Puente rojo sobre el Río Eléctrico con montañas nevadas de fondo',
+    detalles: [
+      'Traslado de ida puntual',
+      'Café o té para el viaje',
+      'Parada en el histórico Parador La Leona',
+      'Espera en el Río Eléctrico',
+      'Regreso a tu hotel o alojamiento',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 295000, 2: 330000, 3: 355000, 4: 380000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'personas', 'hotel'],
+  },
+  {
+    id: 'chalten-laguna-de-los-tres',
+    destino: 'chalten',
+    titulo: 'El Chaltén Laguna de los Tres',
+    recorrido: '215 km · 2 h 40 min',
+    imagen: img('chalten-laguna-de-los-tres'),
+    alt: 'Viajeros frente a la Laguna de los Tres, con el cerro Fitz Roy de fondo',
+    detalles: [
+      'Traslado temprano a El Chaltén',
+      'Café o té para el viaje',
+      'Trekking a Laguna de los Tres',
+      'Regreso a tu hotel o alojamiento en El Calafate',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 310000, 2: 340000, 3: 365000, 4: 390000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'personas', 'hotel'],
+  },
+  {
+    id: 'chalten-cerro-torre',
+    destino: 'chalten',
+    titulo: 'El Chaltén Cerro Torre',
+    recorrido: '215 km · 2 h 40 min',
+    imagen: img('chalten-cerro-torre'),
+    alt: 'Trekkers contemplando las agujas del Cerro Torre',
+    detalles: [
+      'Traslado temprano a El Chaltén',
+      'Café o té para el viaje',
+      'Trekking a Cerro Torre',
+      'Regreso a tu hotel o alojamiento en El Calafate',
+    ],
+    nota: null,
+    destacado: false,
+    precios: { 1: 300000, 2: 325000, 3: 345000, 4: 365000 },
+    preciosGrupo: { 5: null, 9: null, 12: null, 19: null, 24: null }, // TODO cliente: precios por tamaño de grupo
+    vianda: true,
+    campos: ['fecha', 'personas', 'hotel'],
+  },
+];
